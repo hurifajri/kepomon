@@ -2,7 +2,7 @@
 import { Global } from '@emotion/react';
 
 // Internal modules
-import { globalStyles } from '@/styles';
+import globalStyles from '@/styles/global-styles';
 
 const App = ({ Component, pageProps }) => (
   <>
