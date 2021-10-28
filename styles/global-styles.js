@@ -21,7 +21,6 @@ const globalStyles = css`
   h6 {
     margin: 0;
     font-size: 100%;
-    font: inherit;
   }
 
   a {
