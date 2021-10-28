@@ -1,6 +1,15 @@
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
-  return <h2>Hello, world!</h2>;
+  return (
+    <div>
+      <Head>
+        <title>Kepomon</title>
+        <meta name="description" content="Let's catch a kepo monster" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <h1>Hello, world!</h1>
+    </div>
+  );
 }
