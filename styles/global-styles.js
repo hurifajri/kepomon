@@ -3,7 +3,15 @@ import { css } from '@emotion/react';
 
 const globalStyles = css`
   html,
-  body {
+  body,
+  ul,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     padding: 0;
     margin: 0;
   }
@@ -19,7 +27,6 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
-    margin: 0;
     font-size: 100%;
   }
 
