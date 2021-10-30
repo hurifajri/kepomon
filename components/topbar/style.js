@@ -1,4 +1,17 @@
 // External modules
 import styled from '@emotion/styled';
 
-export const StyledHeader = styled.header``;
+// Internal modules
+import media from '@/styles/media';
+
+export const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  ${media.sm} {
+    flex-direction: row;
+    width: 100%;
+  }
+`;
