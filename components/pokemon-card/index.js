@@ -23,7 +23,7 @@ const PokemonCard = ({ pokemon }) => {
 
   return (
     <If condition={typeof pokemon === 'object'}>
-      <Link href="/" passHref={true}>
+      <Link href={`/pokemon/${pokemon.name}`} passHref={true}>
         <a>
           <Card
             bgColor={light}
