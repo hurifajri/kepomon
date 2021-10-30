@@ -2,6 +2,8 @@
 import Head from 'next/head';
 
 // Internal modules
+import If from '@/components/if';
+import Loading from '@/components/loading';
 import PokemonList from '@/components/pokemon-list';
 import client from '@/graphql/client';
 import { VARIABLES as variables } from '@/graphql/constants';
@@ -10,8 +12,11 @@ import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 import usePokemons from '@/hooks/usePokemons';
 
 const Home = ({ initialPokemons }) => {
-  const { pokemons, getPokemons } = usePokemons(initialPokemons);
-  useInfiniteScroll(getPokemons);
+  const data = usePokemons(initialPokemons);
+  const { loading, error, pokemons, getPokemons } = data;
+  useInfiniteScroll(loading, getPokemons);
+
+  if (error) return `Error! ${error.message}`;
 
   return (
     <>
@@ -21,6 +26,9 @@ const Home = ({ initialPokemons }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PokemonList pokemons={pokemons} />
+      <If condition={loading}>
+        <Loading />
+      </If>
     </>
   );
 };
