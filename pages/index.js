@@ -1,41 +1,36 @@
 // External modules
 import Head from 'next/head';
-import Image from 'next/image';
 
 // Internal modules
 import PokemonList from '@/components/pokemon-list';
 import client from '@/graphql/client';
-import { OPTIONS } from '@/graphql/constants';
+import { VARIABLES as variables } from '@/graphql/constants';
 import { GET_POKEMONS } from '@/graphql/query';
-import logo from '@/public/logo.png';
+import useInfiniteScroll from '@/hooks/useInfiniteScroll';
+import usePokemons from '@/hooks/usePokemons';
 
-const Home = ({ pokemons }) => (
-  <div>
-    <Head>
-      <title>Kepomon</title>
-      <meta name="description" content="Let's catch a kepo monster" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <div>
-      <header>
-        <Image src={logo} alt="Kepomon logo" />
-      </header>
-      <main>
-        <PokemonList pokemons={pokemons} />
-      </main>
-    </div>
-  </div>
-);
+const Home = ({ initialPokemons }) => {
+  const { pokemons, getPokemons } = usePokemons(initialPokemons);
+  useInfiniteScroll(getPokemons);
+
+  return (
+    <>
+      <Head>
+        <title>Kepomon</title>
+        <meta name="description" content="Let's catch a kepo monster" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <PokemonList pokemons={pokemons} />
+    </>
+  );
+};
 
 export const getServerSideProps = async () => {
-  const { data } = await client.query({
-    query: GET_POKEMONS,
-    variables: OPTIONS,
-  });
+  const { data } = await client.query({ query: GET_POKEMONS, variables });
 
   return {
     props: {
-      pokemons: data.pokemons.results,
+      initialPokemons: data.pokemons.results,
     },
   };
 };
