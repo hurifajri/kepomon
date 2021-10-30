@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
   width: auto;
   ${media.sm} {
     flex-direction: row;
