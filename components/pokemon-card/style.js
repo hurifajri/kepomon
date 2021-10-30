@@ -52,6 +52,7 @@ export const headingStyle = css`
   font-size: 13px;
   color: var(--dark-white);
   z-index: 1;
+  text-align: right;
   text-transform: uppercase;
   text-shadow: -1px -1px 0 var(--dark-black), 1px -1px 0 var(--dark-black),
     -1px 1px 0 var(--dark-black), 1px 1px 0 var(--dark-black),
