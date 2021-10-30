@@ -4,11 +4,11 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 // Internal modules
+import Card from '@/components/card';
 import If from '@/components/if';
 import {
+  cardContentStyle,
   headingStyle,
-  StyledA,
-  StyledCard,
   StyledHeader,
   StyledMain,
   StyledMiniCard,
@@ -24,8 +24,16 @@ const PokemonCard = ({ pokemon }) => {
   return (
     <If condition={typeof pokemon === 'object'}>
       <Link href="/" passHref={true}>
-        <StyledA bgColor={light}>
-          <StyledCard>
+        <a>
+          <Card
+            bgColor={light}
+            border={4}
+            contentStyle={cardContentStyle}
+            pt={15}
+            pr={15}
+            pb={50}
+            pl={15}
+          >
             <StyledHeader>
               <StyledMiniCard bgColor={dark}>
                 <span className="content">
@@ -47,8 +55,8 @@ const PokemonCard = ({ pokemon }) => {
                 {pokemon.name}
               </Heading>
             </StyledMain>
-          </StyledCard>
-        </StyledA>
+          </Card>
+        </a>
       </Link>
     </If>
   );

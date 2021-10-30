@@ -2,27 +2,12 @@
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
 
-export const StyledA = styled.a`
-  display: inline-block;
-  padding: 15px 15px 50px;
-  background-color: ${({ bgColor }) => bgColor};
-  border: 4px solid var(--color-dark-black);
-  box-shadow: 9px 10px 0 var(--color-light-blue);
-  transform: skew(-5deg);
-  transition: all 0.25s;
-  &:hover {
-    box-shadow: none;
-    transform: skew(-5deg) translateX(5px);
-  }
-`;
-
-export const StyledCard = styled.div`
+export const cardContentStyle = css`
   position: relative;
-  background-color: var(--color-light-white);
+  background-color: var(--light-white);
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  transform: skew(5deg);
 `;
 
 export const StyledHeader = styled.header`
@@ -43,8 +28,8 @@ export const StyledMiniCard = styled.span`
     position: absolute;
     right: -15px;
     top: -30px;
-    border: 3px solid var(--color-dark-black);
-    background-color: var(--color-dark-white);
+    border: 3px solid var(--dark-black);
+    background-color: var(--dark-white);
   }
   & .content {
     display: inline-block;
@@ -65,11 +50,11 @@ export const StyledMain = styled.main`
 
 export const headingStyle = css`
   font-size: 13px;
-  color: var(--color-dark-white);
+  color: var(--dark-white);
   z-index: 1;
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 var(--color-dark-black),
-    1px -1px 0 var(--color-dark-black), -1px 1px 0 var(--color-dark-black),
-    1px 1px 0 var(--color-dark-black), 2px 2px 0 var(--color-dark-black),
-    2px 2px 0 var(--color-dark-black), 3px 3px 0 var(--color-dark-black);
+  text-shadow: -1px -1px 0 var(--dark-black), 1px -1px 0 var(--dark-black),
+    -1px 1px 0 var(--dark-black), 1px 1px 0 var(--dark-black),
+    2px 2px 0 var(--dark-black), 2px 2px 0 var(--dark-black),
+    3px 3px 0 var(--dark-black);
 `;
