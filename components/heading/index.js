@@ -22,10 +22,6 @@ const Heading = forwardRef((props, ref) => {
   );
 });
 
-Heading.defaultProps = {
-  style: '',
-};
-
 Heading.propTypes = {
   children: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
