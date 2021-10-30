@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 
 export const StyledA = styled.a`
   display: inline-block;
-  padding: 20px 20px 75px;
-  background-color: ${({ color }) => color};
+  padding: 15px 15px 50px;
+  background-color: ${({ bgColor }) => bgColor};
   border: 4px solid var(--color-dark-black);
   box-shadow: 9px 10px 0 var(--color-light-blue);
   transform: skew(-5deg);
@@ -20,8 +20,8 @@ export const StyledCard = styled.div`
   position: relative;
   background-color: var(--color-light-white);
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   transform: skew(5deg);
 `;
 
@@ -33,21 +33,23 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledMiniCard = styled.span`
-  display: inline-block;
-  background-color: ${({ color }) => color};
+  display: flex;
+  align-items: center;
+  background-color: ${({ bgColor }) => bgColor};
   transform: skew(-15deg);
   padding: 3px 5px;
   z-index: 1;
   &.counter {
     position: absolute;
-    right: -25px;
-    top: -35px;
+    right: -15px;
+    top: -30px;
     border: 3px solid var(--color-dark-black);
     background-color: var(--color-dark-white);
   }
   & .content {
     display: inline-block;
     transform: skew(15deg);
+    font-size: 12px;
     font-weight: 700;
   }
 `;
@@ -58,11 +60,11 @@ export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 13px;
 `;
 
 export const headingStyle = css`
-  font-size: 21px;
+  font-size: 13px;
   color: var(--color-dark-white);
   z-index: 1;
   text-transform: uppercase;

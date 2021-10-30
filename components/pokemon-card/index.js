@@ -24,15 +24,15 @@ const PokemonCard = ({ pokemon }) => {
   return (
     <If condition={typeof pokemon === 'object'}>
       <Link href="/" passHref={true}>
-        <StyledA color={light}>
+        <StyledA bgColor={light}>
           <StyledCard>
             <StyledHeader>
-              <StyledMiniCard color={dark}>
+              <StyledMiniCard bgColor={dark}>
                 <span className="content">
                   {`#${String(pokemon.id).padStart(4, '0')}`}
                 </span>
               </StyledMiniCard>
-              <StyledMiniCard color={dark} className="counter">
+              <StyledMiniCard bgColor={dark} className="counter">
                 <span className="content">{`Owned: ${0}`}</span>
               </StyledMiniCard>
             </StyledHeader>
@@ -40,8 +40,8 @@ const PokemonCard = ({ pokemon }) => {
               <Image
                 src={pokemon.dreamworld}
                 alt={pokemon.name}
-                width={150}
-                height={150}
+                width={100}
+                height={100}
               />
               <Heading level={2} style={headingStyle}>
                 {pokemon.name}
