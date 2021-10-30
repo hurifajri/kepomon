@@ -2,15 +2,15 @@
 import PropTypes from 'prop-types';
 
 // Internal modules
-import If from '@/components/If';
+import If from '@/components/if';
+import Item from '@/components/item';
 import PokemonCard from '@/components/pokemon-card';
-import { StyledItem } from '@/components/pokemon-item/style';
 
 const PokemonItem = ({ pokemon }) => (
   <If condition={typeof pokemon === 'object'}>
-    <StyledItem>
+    <Item>
       <PokemonCard pokemon={pokemon} />
-    </StyledItem>
+    </Item>
   </If>
 );
 
