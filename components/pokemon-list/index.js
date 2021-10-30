@@ -11,7 +11,7 @@ const PokemonList = ({ pokemons }) => (
     <StyledList>
       {
         // Iterate each pokemon from pokemons
-        pokemons.map(pokemon => (
+        pokemons?.map(pokemon => (
           <PokemonItem pokemon={pokemon} key={pokemon.id} />
         ))
       }
