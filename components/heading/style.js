@@ -2,5 +2,6 @@
 import styled from '@emotion/styled';
 
 export const StyledHeading = styled.h1`
-  color: inherit;
+  font-size: 100%;
+  margin: 0;
 `;
