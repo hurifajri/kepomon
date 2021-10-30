@@ -9,8 +9,9 @@ import {
   headingStyle,
   StyledA,
   StyledCard,
-  StyledContent,
-  StyledId,
+  StyledHeader,
+  StyledMain,
+  StyledMiniCard,
 } from '@/components/pokemon-card/style';
 import Heading from '@/components/heading';
 import useRandomColors from '@/hooks/useRandomColors';
@@ -25,10 +26,17 @@ const PokemonCard = ({ pokemon }) => {
       <Link href="/" passHref={true}>
         <StyledA color={light}>
           <StyledCard>
-            <StyledId color={dark}>
-              <span>{`#${String(pokemon.id).padStart(3, '0')}`}</span>
-            </StyledId>
-            <StyledContent>
+            <StyledHeader>
+              <StyledMiniCard color={dark}>
+                <span className="content">
+                  {`#${String(pokemon.id).padStart(4, '0')}`}
+                </span>
+              </StyledMiniCard>
+              <StyledMiniCard color={dark} className="counter">
+                <span className="content">{`Owned: ${0}`}</span>
+              </StyledMiniCard>
+            </StyledHeader>
+            <StyledMain>
               <Image
                 src={pokemon.dreamworld}
                 alt={pokemon.name}
@@ -38,7 +46,7 @@ const PokemonCard = ({ pokemon }) => {
               <Heading level={2} style={headingStyle}>
                 {pokemon.name}
               </Heading>
-            </StyledContent>
+            </StyledMain>
           </StyledCard>
         </StyledA>
       </Link>

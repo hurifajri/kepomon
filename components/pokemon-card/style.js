@@ -25,19 +25,34 @@ export const StyledCard = styled.div`
   transform: skew(5deg);
 `;
 
-export const StyledId = styled.span`
+export const StyledHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+`;
+
+export const StyledMiniCard = styled.span`
   display: inline-block;
   background-color: ${({ color }) => color};
   transform: skew(-15deg);
   padding: 3px 5px;
-  & span {
+  z-index: 1;
+  &.counter {
+    position: absolute;
+    right: -25px;
+    top: -35px;
+    border: 3px solid var(--color-dark-black);
+    background-color: var(--color-dark-white);
+  }
+  & .content {
     display: inline-block;
     transform: skew(15deg);
     font-weight: 700;
   }
 `;
 
-export const StyledContent = styled.div`
+export const StyledMain = styled.main`
   position: absolute;
   top: 30px;
   display: flex;
@@ -47,7 +62,9 @@ export const StyledContent = styled.div`
 `;
 
 export const headingStyle = css`
+  font-size: 21px;
   color: var(--color-dark-white);
+  z-index: 1;
   text-transform: uppercase;
   text-shadow: -1px -1px 0 var(--color-dark-black),
     1px -1px 0 var(--color-dark-black), -1px 1px 0 var(--color-dark-black),
