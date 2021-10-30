@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 // Internal modules
-import If from '@/components/If';
+import If from '@/components/if';
 import {
   headingStyle,
   StyledA,
