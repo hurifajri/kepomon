@@ -15,10 +15,6 @@ const Item = forwardRef((props, ref) => {
   );
 });
 
-Item.defaultProps = {
-  style: '',
-};
-
 Item.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
   style: PropTypes.string,
