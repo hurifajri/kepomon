@@ -7,17 +7,17 @@ import media from '@/styles/media';
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
   align-items: center;
-  ${media.xs} {
+  gap: 25px;
+  margin: 25px auto;
+  ${media.sm} {
     align-items: flex-start;
     max-width: 685px;
   }
-  ${media.sm} {
+  ${media.md} {
     max-width: 768px;
   }
-  ${media.lg} {
+  ${media.xl} {
     max-width: 1024px;
   }
-  margin: 25px auto;
 `;
