@@ -2,20 +2,20 @@
 import PropTypes from 'prop-types';
 
 // Internal modules
-import If from '@/components/If';
+import If from '@/components/if';
+import List from '@/components/list';
 import PokemonItem from '@/components/pokemon-item';
-import { StyledList } from '@/components/pokemon-list/style';
 
 const PokemonList = ({ pokemons }) => (
   <If condition={pokemons?.length > 0}>
-    <StyledList>
+    <List>
       {
         // Iterate each pokemon from pokemons
         pokemons?.map(pokemon => (
           <PokemonItem pokemon={pokemon} key={pokemon.id} />
         ))
       }
-    </StyledList>
+    </List>
   </If>
 );
 
