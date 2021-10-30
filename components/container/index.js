@@ -15,10 +15,6 @@ const Container = forwardRef((props, ref) => {
   );
 });
 
-Container.defaultProps = {
-  style: '',
-};
-
 Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
   style: PropTypes.string,
