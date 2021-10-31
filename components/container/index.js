@@ -19,7 +19,7 @@ const Container = forwardRef((props, ref) => {
 
 Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
-  style: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 export default Container;

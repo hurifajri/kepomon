@@ -27,7 +27,7 @@ const Heading = forwardRef((props, ref) => {
 Heading.propTypes = {
   children: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
-  style: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 export default Heading;
