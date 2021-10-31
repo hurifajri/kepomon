@@ -18,6 +18,19 @@ const globalStyles = css`
     text-decoration: none;
   }
 
+  /* Start custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--dark-white);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-black);
+    border-radius: 5px;
+  }
+  /* End custom scrollbar */
+
   :root {
     --dark-black: #161a2b;
     --dark-cyan: #a0cece;
