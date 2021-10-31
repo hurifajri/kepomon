@@ -31,7 +31,8 @@ export const cardStyle = css`
   border: 2px solid var(--dark-black);
   transition: all 0.25s;
   transform: skew(-5deg);
-  &:hover {
+  cursor: pointer;
+  &:active {
     box-shadow: none;
     transform: skew(-5deg) translateX(5px);
   }
@@ -40,8 +41,10 @@ export const cardStyle = css`
 export const cardContentStyle = css`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 6px -10px 5px 35px;
   transform: skew(5deg);
+  width: 100%;
 
   &:hover svg {
     animation: ${rotate} ease-in-out 0.5s;
