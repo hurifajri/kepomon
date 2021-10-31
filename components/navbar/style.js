@@ -1,16 +1,13 @@
 // External modules
 import { css, keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
 
-export const StyledNav = styled.nav``;
-
-export const StyledIcon = styled.span`
+export const baseIconStyle = css`
   position: absolute;
   left: -50px;
   top: -15px;
 `;
 
-export const StyledRoute = styled.span`
+export const baseRouteStyle = css`
   font-size: 20px;
   font-weight: 600;
   color: var(--dark-white);
@@ -30,10 +27,22 @@ const rotate = keyframes`
   }
 `;
 
+export const cardStyle = css`
+  border: 2px solid var(--dark-black);
+  transition: all 0.25s;
+  box-shadow: 9px 10px 0 var(--light-blue);
+  transform: skew(-5deg);
+  &:hover {
+    box-shadow: none;
+    transform: skew(-5deg) translateX(5px);
+  }
+`;
+
 export const cardContentStyle = css`
   display: flex;
   align-items: center;
   margin: 6px -10px 5px 35px;
+  transform: skew(5deg);
 
   &:hover svg {
     animation: ${rotate} ease-in-out 0.5s;

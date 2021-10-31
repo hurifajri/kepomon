@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 // Internal modules
-import { StyledItem } from '@/components/item/style';
+import { baseStyle } from '@/components/item/style';
 
 const Item = forwardRef((props, ref) => {
   const { children, css, ...rest } = props;
 
   return (
-    <StyledItem ref={ref} css={css} {...rest}>
+    <li ref={ref} css={[baseStyle, css]} {...rest}>
       {children}
-    </StyledItem>
+    </li>
   );
 });
 

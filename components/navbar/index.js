@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import Link from 'next/link';
 
@@ -6,15 +8,15 @@ import Card from '@/components/card';
 import Item from '@/components/item';
 import List from '@/components/list';
 import {
+  baseIconStyle,
+  baseRouteStyle,
   cardContentStyle,
-  StyledIcon,
-  StyledNav,
-  StyledRoute,
+  cardStyle,
 } from '@/components/navbar/style';
 import routes from '@/utils/routes';
 
 const Navbar = () => (
-  <StyledNav>
+  <nav>
     <List>
       {
         // Iterate each route from routes
@@ -22,9 +24,9 @@ const Navbar = () => (
           <Item key={route.id}>
             <Link href={route.path} passHref={true}>
               <a>
-                <Card border={2} cssContent={cardContentStyle}>
-                  <StyledIcon>{route.icon}</StyledIcon>
-                  <StyledRoute>{route.name}</StyledRoute>
+                <Card css={cardStyle} cssContent={cardContentStyle}>
+                  <span css={baseIconStyle}>{route.icon}</span>
+                  <span css={baseRouteStyle}>{route.name}</span>
                 </Card>
               </a>
             </Link>
@@ -32,7 +34,7 @@ const Navbar = () => (
         ))
       }
     </List>
-  </StyledNav>
+  </nav>
 );
 
 export default Navbar;

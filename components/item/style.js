@@ -1,7 +1,7 @@
 // External modules
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-export const StyledItem = styled.li`
+export const baseStyle = css`
   text-indent: 0;
   list-style-type: none;
 `;

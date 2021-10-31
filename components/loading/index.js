@@ -1,11 +1,13 @@
+/** @jsxImportSource @emotion/react */
+
 // Internal modules
 import Pokeball from '@/components/icons/pokeball';
-import { StyledLoading } from '@/components/loading/style';
+import { baseStyle } from '@/components/loading/style';
 
 const Loading = () => (
-  <StyledLoading>
+  <span className="loading" css={baseStyle}>
     <Pokeball size={5} />
-  </StyledLoading>
+  </span>
 );
 
 export default Loading;

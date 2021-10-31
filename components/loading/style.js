@@ -1,6 +1,5 @@
 // External modules
-import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/react';
 
 const rotate = keyframes`
   0% {
@@ -11,7 +10,7 @@ const rotate = keyframes`
   }
 `;
 
-export const StyledLoading = styled.span`
+export const baseStyle = css`
   display: flex;
   align-items: center;
   justify-content: center;

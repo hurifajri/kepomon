@@ -1,10 +1,10 @@
 // External modules
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 // Internal modules
 import media from '@/styles/media';
 
-export const StyledHeader = styled.header`
+export const baseStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;

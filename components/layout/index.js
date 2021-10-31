@@ -1,18 +1,20 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import PropTypes from 'prop-types';
 
 // Internal modules
 import Container from '@/components/container';
-import { StyledLayout, StyledMain } from '@/components/layout/style';
+import { baseLayoutStyle, baseMainStyle } from '@/components/layout/style';
 import Topbar from '@/components/topbar';
 
 const Layout = ({ children }) => (
-  <StyledLayout>
+  <div className="layout" css={baseLayoutStyle}>
     <Container>
       <Topbar />
-      <StyledMain>{children}</StyledMain>
+      <main css={baseMainStyle}>{children}</main>
     </Container>
-  </StyledLayout>
+  </div>
 );
 
 Layout.propTypes = {

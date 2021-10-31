@@ -1,12 +1,12 @@
 // External modules
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-export const StyledLayout = styled.div`
+export const baseLayoutStyle = css`
   min-height: 100vh;
   height: 100%;
 `;
 
-export const StyledMain = styled.main`
+export const baseMainStyle = css`
   display: flex;
   flex-direction: column;
   gap: 35px;

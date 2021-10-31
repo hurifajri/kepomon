@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 // Internal modules
-import { StyledCard } from '@/components/card/style';
+import { baseCardStyle } from '@/components/card/style';
 
 const Card = forwardRef((props, ref) => {
   const { children, cssContent, css, ...rest } = props;
 
   return (
-    <StyledCard ref={ref} css={css} {...rest}>
-      <div css={cssContent}>{children}</div>
-    </StyledCard>
+    <div className="card" ref={ref} css={[baseCardStyle, css]} {...rest}>
+      <div className="card-content" css={cssContent}>
+        {children}
+      </div>
+    </div>
   );
 });
 

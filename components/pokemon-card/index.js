@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,11 +9,13 @@ import PropTypes from 'prop-types';
 import Card from '@/components/card';
 import If from '@/components/if';
 import {
+  baseHeaderStyle,
+  baseMainStyle,
   cardContentStyle,
   cardStyle,
   headingStyle,
-  StyledHeader,
-  StyledMain,
+  miniCardContentStyle,
+  miniCardStyle,
   StyledMiniCard,
 } from '@/components/pokemon-card/style';
 import Heading from '@/components/heading';
@@ -27,22 +31,28 @@ const PokemonCard = ({ pokemon }) => {
       <Link href={`/pokemon/${pokemon.name}`} passHref={true}>
         <a>
           <Card
-            bgColor={light}
-            border={4}
             css={cardStyle}
             cssContent={cardContentStyle}
+            style={{ '--bgColor': light }}
           >
-            <StyledHeader>
-              <StyledMiniCard bgColor={dark}>
-                <span className="content">
-                  {`#${String(pokemon.id).padStart(3, '0')}`}
-                </span>
-              </StyledMiniCard>
-              <StyledMiniCard bgColor={dark} className="counter">
+            <header css={baseHeaderStyle}>
+              <Card
+                css={miniCardStyle}
+                cssContent={miniCardContentStyle}
+                style={{ '--bgColor': dark }}
+              >
+                {`#${String(pokemon.id).padStart(3, '0')}`}
+              </Card>
+              <Card
+                className="counter"
+                css={miniCardStyle}
+                cssContent={miniCardContentStyle}
+                style={{ '--bgColor': dark }}
+              >
                 <span className="content">{`Owned: ${0}`}</span>
-              </StyledMiniCard>
-            </StyledHeader>
-            <StyledMain>
+              </Card>
+            </header>
+            <main css={baseMainStyle}>
               <Image
                 src={pokemon.dreamworld}
                 alt={pokemon.name}
@@ -52,7 +62,7 @@ const PokemonCard = ({ pokemon }) => {
               <Heading level={2} css={headingStyle}>
                 {pokemon.name}
               </Heading>
-            </StyledMain>
+            </main>
           </Card>
         </a>
       </Link>

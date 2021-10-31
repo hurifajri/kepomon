@@ -1,7 +1,7 @@
 // External modules
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-export const StyledHeading = styled.h1`
+export const baseStyle = css`
   font-size: 100%;
   margin: 0;
 `;
