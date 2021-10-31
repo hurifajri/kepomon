@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import PropTypes from 'prop-types';
 
@@ -5,10 +7,11 @@ import PropTypes from 'prop-types';
 import If from '@/components/if';
 import List from '@/components/list';
 import PokemonItem from '@/components/pokemon-item';
+import { listStyle } from '@/components/pokemon-list/style';
 
 const PokemonList = ({ pokemons }) => (
   <If condition={pokemons?.length > 0}>
-    <List>
+    <List css={listStyle}>
       {
         // Iterate each pokemon from pokemons
         pokemons?.map(pokemon => (
