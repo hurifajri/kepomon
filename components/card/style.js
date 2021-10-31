@@ -12,7 +12,4 @@ export const cardBorderStyle = css`
 
 export const cardShadowStyle = css`
   box-shadow: 9px 10px 0 var(--light-blue);
-  &:hover {
-    box-shadow: none;
-  }
 `;
