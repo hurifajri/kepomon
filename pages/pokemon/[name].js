@@ -1,38 +1,43 @@
 // External modules
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 // Internal modules
-import If from '@/components/if';
-import Loading from '@/components/loading';
 import PokemonDetails from '@/components/pokemon-details';
-import usePokemon from '@/hooks/usePokemon';
+import client from '@/graphql/client';
+import { GET_POKEMON } from '@/graphql/query';
 
-const Pokemon = () => {
-  const router = useRouter();
-  const { name } = router.query;
-  const { loading, error, pokemon } = usePokemon(name);
+const Pokemon = ({ pokemon }) => (
+  <>
+    <Head>
+      <title>{`${pokemon.name}'s Profile`}</title>
+      <meta
+        name="description"
+        content={`The complete information about ${pokemon.name}`}
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <PokemonDetails pokemon={pokemon} />
+  </>
+);
 
-  if (error) return `Error! ${error.message}`;
+export const getServerSideProps = async context => {
+  // Get pokemon name from context
+  const { name, img } = context.query;
 
-  return (
-    <>
-      <Head>
-        <title>{`${name}'s Profile`}</title>
-        <meta
-          name="description"
-          content={`The complete information about ${name}`}
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <If condition={loading}>
-        <Loading />
-      </If>
-      <If condition={!loading}>
-        <PokemonDetails pokemon={pokemon} />
-      </If>
-    </>
-  );
+  // Get pokemon data in the server
+  const { data } = await client.query({
+    query: GET_POKEMON,
+    variables: { name },
+  });
+
+  // Add a new `img` property to get Image from home page
+  const modifiedPokemon = { ...data.pokemon, img: img ?? null };
+
+  return {
+    props: {
+      pokemon: modifiedPokemon,
+    },
+  };
 };
 
 export default Pokemon;
