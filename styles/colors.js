@@ -14,3 +14,24 @@ export const lightColors = {
   purple: 'var(--light-purple)',
   white: 'var(--light-white)',
 };
+
+export const typeColors = {
+  normal: 'var(--type-normal)',
+  fighting: 'var(--type-fighting)',
+  flying: 'var(--type-flying)',
+  poison: 'var(--type-poison)',
+  ground: 'var(--type-ground)',
+  rock: 'var(--type-rock)',
+  bug: 'var(--type-bug)',
+  ghost: 'var(--type-ghost)',
+  steel: 'var(--type-steel)',
+  fire: 'var(--type-fire)',
+  water: 'var(--type-water)',
+  grass: 'var(--type-grass)',
+  electric: 'var(--type-electric)',
+  psychic: 'var(--type-psychic)',
+  ice: 'var(--type-ice)',
+  dragon: 'var(--type-dragon)',
+  dark: 'var(--type-dark)',
+  fairy: 'var(--type-fairy)',
+};
