@@ -18,12 +18,12 @@ import {
   miniCardStyle,
 } from '@/components/pokemon-card/style';
 import Heading from '@/components/heading';
-import useRandomColors from '@/hooks/useRandomColors';
+import useRandomColor from '@/hooks/useRandomColor';
 
 const PokemonCard = ({ pokemon }) => {
   // Get random color based on pokemon id
   const flag = pokemon.id % 3;
-  const { light, dark } = useRandomColors(flag);
+  const { light, dark } = useRandomColor(flag);
 
   return (
     <If condition={typeof pokemon === 'object'}>
