@@ -7,7 +7,6 @@ import { forwardRef } from 'react';
 
 // Internal modules
 import { headingStyle } from '@/components/heading/style';
-import If from '@/components/if';
 
 const Heading = forwardRef((props, ref) => {
   const { children, level, css, ...rest } = props;
@@ -23,11 +22,15 @@ const Heading = forwardRef((props, ref) => {
     children
   );
 
-  return <If condition={typeof children === 'string'}>{heading}</If>;
+  return heading;
 });
 
 Heading.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
   css: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   level: PropTypes.number.isRequired,
 };
