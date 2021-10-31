@@ -36,6 +36,11 @@ export const detailsStyle = css`
   }
 `;
 
+export const profileStyle = css`
+  ${columnStyle}
+  flex: 1;
+`;
+
 export const topLeftStyle = css`
   ${columnStyle}
   flex: 1;
@@ -57,6 +62,7 @@ export const textStyle = css`
 
 export const cardStyle = css`
   padding: 50px;
+  flex: 3;
   ${media.lg} {
     transform: skew(-3deg);
   }

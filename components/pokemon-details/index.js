@@ -18,6 +18,7 @@ import {
   headingStyle,
   imageStyle,
   mainStyle,
+  profileStyle,
   sectionColumnStyle,
   sectionRowStyle,
   textStyle,
@@ -65,7 +66,7 @@ const PokemonDetails = ({ pokemon }) => {
     <If condition={pokemon && typeof pokemon === 'object'}>
       <Global styles={bodyStyle} />
       <div css={detailsStyle}>
-        <div css={columnStyle}>
+        <div css={profileStyle}>
           <header css={columnStyle}>
             <section className="pokemon-image" css={imageStyle}>
               <Image src={profileImage} alt={name} width={200} height={200} />
