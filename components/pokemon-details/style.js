@@ -4,7 +4,23 @@ import { css } from '@emotion/react';
 // Internal modules
 import media from '@/styles/media';
 
-export const baseDetailsStyle = css`
+export const columnStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
+
+export const sectionStyle = css`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const headingStyle = css`
+  font-size: 25px;
+`;
+
+export const detailsStyle = css`
   display: flex;
   flex-direction: column;
   ${media.md} {
@@ -12,7 +28,7 @@ export const baseDetailsStyle = css`
   }
 `;
 
-export const baseImageStyle = css`
+export const imageStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
