@@ -22,7 +22,7 @@ const Pokemon = ({ pokemon }) => (
 
 export const getServerSideProps = async context => {
   // Get pokemon name from context
-  const { name, img } = context.query;
+  const { name, image } = context.query;
 
   // Get pokemon data in the server
   const { data } = await client.query({
@@ -30,8 +30,8 @@ export const getServerSideProps = async context => {
     variables: { name },
   });
 
-  // Add a new `img` property to get Image from home page
-  const modifiedPokemon = { ...data.pokemon, img: img ?? null };
+  // Add a new `image` property to get Image from home page
+  const modifiedPokemon = { ...data.pokemon, image: image ?? null };
 
   return {
     props: {
