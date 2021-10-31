@@ -20,7 +20,11 @@ const PokemonTypeItem = ({ pokemonType }) => {
   return (
     <If condition={typeof pokemonType === 'object'}>
       <Item css={itemStyle}>
-        <span css={iconStyle} style={{ '--bgColor': typeColor }}>
+        <span
+          css={iconStyle}
+          style={{ '--bgColor': typeColor }}
+          title={pokemonType.name}
+        >
           {typeIcon}
         </span>
       </Item>
