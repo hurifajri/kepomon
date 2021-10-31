@@ -8,6 +8,7 @@ import Card from '@/components/card';
 import If from '@/components/if';
 import {
   cardContentStyle,
+  cardStyle,
   headingStyle,
   StyledHeader,
   StyledMain,
@@ -28,16 +29,13 @@ const PokemonCard = ({ pokemon }) => {
           <Card
             bgColor={light}
             border={4}
+            style={cardStyle}
             contentStyle={cardContentStyle}
-            pt={15}
-            pr={15}
-            pb={50}
-            pl={15}
           >
             <StyledHeader>
               <StyledMiniCard bgColor={dark}>
                 <span className="content">
-                  {`#${String(pokemon.id).padStart(4, '0')}`}
+                  {`#${String(pokemon.id).padStart(3, '0')}`}
                 </span>
               </StyledMiniCard>
               <StyledMiniCard bgColor={dark} className="counter">

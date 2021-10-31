@@ -2,6 +2,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
+export const cardStyle = css`
+  padding: 15px 15px 50px 15px;
+`;
+
 export const cardContentStyle = css`
   position: relative;
   background-color: var(--light-white);
