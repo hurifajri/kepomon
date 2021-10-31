@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
@@ -15,7 +17,7 @@ const Heading = forwardRef((props, ref) => {
 
   return (
     <If condition={typeof children === 'string'}>
-      <StyledHeading as={tag} ref={ref} className={style} {...rest}>
+      <StyledHeading as={tag} ref={ref} css={style} {...rest}>
         {children}
       </StyledHeading>
     </If>

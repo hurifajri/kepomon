@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
@@ -9,8 +11,8 @@ const Card = forwardRef((props, ref) => {
   const { children, contentStyle, style, ...rest } = props;
 
   return (
-    <StyledCard ref={ref} className={style} {...rest}>
-      <div className={contentStyle}>{children}</div>
+    <StyledCard ref={ref} css={style} {...rest}>
+      <div css={contentStyle}>{children}</div>
     </StyledCard>
   );
 });

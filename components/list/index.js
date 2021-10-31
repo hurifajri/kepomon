@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 // External modules
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
@@ -9,7 +11,7 @@ const List = forwardRef((props, ref) => {
   const { children, style, ...rest } = props;
 
   return (
-    <StyledList ref={ref} className={style} {...rest}>
+    <StyledList ref={ref} css={style} {...rest}>
       {children}
     </StyledList>
   );

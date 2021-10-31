@@ -1,5 +1,5 @@
 // External modules
-import { css } from '@emotion/css';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const cardContentStyle = css`

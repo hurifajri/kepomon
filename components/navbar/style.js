@@ -1,6 +1,5 @@
 // External modules
-import { css } from '@emotion/css';
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const StyledNav = styled.nav``;
