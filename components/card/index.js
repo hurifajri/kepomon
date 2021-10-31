@@ -6,9 +6,9 @@ import { forwardRef } from 'react';
 
 // Internal modules
 import {
-  baseCardStyle,
   cardBorderStyle,
   cardShadowStyle,
+  cardStyle,
 } from '@/components/card/style';
 
 const Card = forwardRef((props, ref) => {
@@ -19,7 +19,7 @@ const Card = forwardRef((props, ref) => {
       className="card"
       ref={ref}
       css={[
-        baseCardStyle,
+        cardStyle,
         withBorder && cardBorderStyle,
         withShadow && cardShadowStyle,
         css,

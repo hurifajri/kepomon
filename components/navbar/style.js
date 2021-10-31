@@ -1,13 +1,13 @@
 // External modules
 import { css, keyframes } from '@emotion/react';
 
-export const baseIconStyle = css`
+export const iconStyle = css`
   position: absolute;
   left: -50px;
   top: -15px;
 `;
 
-export const baseRouteStyle = css`
+export const routeStyle = css`
   font-size: 20px;
   font-weight: 600;
   color: var(--dark-white);

@@ -2,10 +2,10 @@
 
 // Internal modules
 import Pokeball from '@/components/icons/pokeball';
-import { baseStyle } from '@/components/loading/style';
+import { loadingStyle } from '@/components/loading/style';
 
 const Loading = () => (
-  <span className="loading" css={baseStyle}>
+  <span className="loading" css={loadingStyle}>
     <Pokeball size={5} />
   </span>
 );

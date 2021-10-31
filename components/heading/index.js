@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 // Internal modules
-import { baseStyle } from '@/components/heading/style';
+import { headingStyle } from '@/components/heading/style';
 import If from '@/components/if';
 
 const Heading = forwardRef((props, ref) => {
@@ -17,7 +17,11 @@ const Heading = forwardRef((props, ref) => {
   const tag = `h${level < 7 ? level : 2}`;
 
   // Create dynamic heading
-  const heading = jsx(tag, { css: [baseStyle, css], ref, ...rest }, children);
+  const heading = jsx(
+    tag,
+    { css: [headingStyle, css], ref, ...rest },
+    children
+  );
 
   return <If condition={typeof children === 'string'}>{heading}</If>;
 });

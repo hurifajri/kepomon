@@ -9,11 +9,11 @@ import PropTypes from 'prop-types';
 import Card from '@/components/card';
 import If from '@/components/if';
 import {
-  baseHeaderStyle,
-  baseMainStyle,
   cardContentStyle,
   cardStyle,
+  headerStyle,
   headingStyle,
+  mainStyle,
   miniCardContentStyle,
   miniCardStyle,
 } from '@/components/pokemon-card/style';
@@ -43,7 +43,7 @@ const PokemonCard = ({ pokemon }) => {
             withShadow
             withBorder
           >
-            <header css={baseHeaderStyle}>
+            <header css={headerStyle}>
               <Card
                 css={miniCardStyle}
                 cssContent={miniCardContentStyle}
@@ -60,7 +60,7 @@ const PokemonCard = ({ pokemon }) => {
                 {`Owned: ${0}`}
               </Card>
             </header>
-            <main css={baseMainStyle}>
+            <main css={mainStyle}>
               <Image
                 src={pokemon.dreamworld}
                 alt={pokemon.name}

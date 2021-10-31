@@ -1,7 +1,7 @@
 // External modules
 import { css } from '@emotion/react';
 
-export const baseCardStyle = css`
+export const cardStyle = css`
   display: flex;
   background-color: var(--dark-white);
 `;

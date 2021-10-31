@@ -10,7 +10,7 @@ const rotate = keyframes`
   }
 `;
 
-export const baseStyle = css`
+export const loadingStyle = css`
   display: flex;
   align-items: center;
   justify-content: center;

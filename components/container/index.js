@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 // Internal modules
-import { baseStyle } from '@/components/container/style';
+import { containerStyle } from '@/components/container/style';
 
 const Container = forwardRef((props, ref) => {
   const { children, css, ...rest } = props;
 
   return (
-    <div className="container" ref={ref} css={[baseStyle, css]} {...rest}>
+    <div className="container" ref={ref} css={[containerStyle, css]} {...rest}>
       {children}
     </div>
   );

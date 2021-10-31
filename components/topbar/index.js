@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 // Internal modules
 import Navbar from '@/components/navbar';
-import { baseStyle } from '@/components/topbar/style';
+import { topbarStyle } from '@/components/topbar/style';
 import logo from '@/public/logo.png';
 
 const Topbar = () => (
-  <header css={baseStyle}>
+  <header css={topbarStyle}>
     <Image src={logo} alt="Kepomon logo" />
     <Navbar />
   </header>

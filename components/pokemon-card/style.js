@@ -20,7 +20,7 @@ export const cardContentStyle = css`
   transform: skew(5deg);
 `;
 
-export const baseHeaderStyle = css`
+export const headerStyle = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@ export const miniCardContentStyle = css`
   font-weight: 700;
 `;
 
-export const baseMainStyle = css`
+export const mainStyle = css`
   position: absolute;
   top: 30px;
   display: flex;

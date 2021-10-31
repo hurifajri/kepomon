@@ -8,10 +8,10 @@ import Card from '@/components/card';
 import Item from '@/components/item';
 import List from '@/components/list';
 import {
-  baseIconStyle,
-  baseRouteStyle,
   cardContentStyle,
   cardStyle,
+  iconStyle,
+  routeStyle,
 } from '@/components/navbar/style';
 import routes from '@/utils/routes';
 
@@ -25,8 +25,8 @@ const Navbar = () => (
             <Link href={route.path} passHref={true}>
               <a>
                 <Card css={cardStyle} cssContent={cardContentStyle} withShadow>
-                  <span css={baseIconStyle}>{route.icon}</span>
-                  <span css={baseRouteStyle}>{route.name}</span>
+                  <span css={iconStyle}>{route.icon}</span>
+                  <span css={routeStyle}>{route.name}</span>
                 </Card>
               </a>
             </Link>
