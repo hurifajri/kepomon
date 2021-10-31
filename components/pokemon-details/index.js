@@ -60,8 +60,6 @@ const PokemonDetails = ({ pokemon }) => {
     }
   `;
 
-  console.log('pokemon', pokemon);
-
   return (
     <If condition={pokemon && typeof pokemon === 'object'}>
       <Global styles={bodyStyle} />
