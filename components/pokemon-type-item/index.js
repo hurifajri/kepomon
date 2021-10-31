@@ -4,24 +4,25 @@
 import PropTypes from 'prop-types';
 
 // Internal modules
-import Heading from '@/components/heading';
-import Grass from '@/components/icons/types/grass';
 import If from '@/components/if';
 import Item from '@/components/item';
-import { iconStyle } from '@/components/pokemon-type-item/style';
+import { iconStyle, itemStyle } from '@/components/pokemon-type-item/style';
 import usePokemonTypesColor from '@/hooks/usePokemonTypesColor';
+import usePokemonTypesIcon from '@/hooks/usePokemonTypesIcon';
 
 const PokemonTypeItem = ({ pokemonType }) => {
   // Get type color
-  const { typeColor } = usePokemonTypesColor(pokemonType.name);
+  const typeColor = usePokemonTypesColor(pokemonType.name);
+
+  // Get type icon
+  const typeIcon = usePokemonTypesIcon(pokemonType.name);
 
   return (
     <If condition={typeof pokemonType === 'object'}>
-      <Item>
+      <Item css={itemStyle}>
         <span css={iconStyle} style={{ '--bgColor': typeColor }}>
-          <Grass size={1} />
+          {typeIcon}
         </span>
-        <Heading level={3}>{pokemonType.name}</Heading>
       </Item>
     </If>
   );
