@@ -10,22 +10,54 @@ export const columnStyle = css`
   gap: 25px;
 `;
 
-export const sectionStyle = css`
+export const rowStyle = css`
   display: flex;
+  flex-direction: row;
+  gap: 25px;
+`;
+
+export const sectionColumnStyle = css`
+  ${columnStyle}
+  gap: 15px;
+`;
+
+export const sectionRowStyle = css`
+  ${rowStyle}
   align-items: center;
   gap: 15px;
+`;
+
+export const detailsStyle = css`
+  ${columnStyle}
+  gap: 25px;
+  ${media.md} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const headingStyle = css`
   font-size: 25px;
 `;
 
-export const detailsStyle = css`
-  display: flex;
-  flex-direction: column;
-  ${media.md} {
-    flex-direction: row;
-  }
+export const textStyle = css`
+  font-weight: 500;
+  text-transform: lowercase;
+`;
+
+export const cardStyle = css`
+  padding: 50px;
+  transform: skew(-5deg);
+`;
+
+export const cardContentStyle = css`
+  ${columnStyle}
+  transform: skew(5deg);
+`;
+
+export const mainStyle = css`
+  ${columnStyle}
+  gap: 10px;
 `;
 
 export const imageStyle = css`

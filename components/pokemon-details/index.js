@@ -6,20 +6,37 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 // Internal modules
+import Card from '@/components/card';
 import Heading from '@/components/heading';
 import If from '@/components/if';
 import {
+  cardContentStyle,
+  cardStyle,
   columnStyle,
   detailsStyle,
   headingStyle,
   imageStyle,
-  sectionStyle,
+  mainStyle,
+  sectionColumnStyle,
+  sectionRowStyle,
+  textStyle,
 } from '@/components/pokemon-details/style';
+import PokemonStatList from '@/components/pokemon-stat-list';
 import PokemonTypeList from '@/components/pokemon-type-list';
 import useRandomColor from '@/hooks/useRandomColor';
 
 const PokemonDetails = ({ pokemon }) => {
-  const { id, img, name, sprites, types } = pokemon;
+  const {
+    id,
+    img,
+    name,
+    height,
+    weight,
+    base_experience,
+    stats,
+    sprites,
+    types,
+  } = pokemon;
   const profileImage = img ?? sprites.front_default;
 
   // Get random color based on pokemon id
@@ -39,13 +56,13 @@ const PokemonDetails = ({ pokemon }) => {
     <If condition={pokemon && typeof pokemon === 'object'}>
       <Global styles={bodyStyle} />
       <div css={detailsStyle}>
-        <div className="profile" css={columnStyle}>
+        <div css={columnStyle}>
           <header css={columnStyle}>
             <section className="pokemon-image" css={imageStyle}>
               <Image src={profileImage} alt={name} width={200} height={200} />
               <span className="shadow"></span>
             </section>
-            <section className="pokemon-name" css={sectionStyle}>
+            <section className="pokemon-name" css={sectionRowStyle}>
               <span css={headingStyle}>
                 {`#${String(id).padStart(3, '0')}`}
               </span>
@@ -54,14 +71,50 @@ const PokemonDetails = ({ pokemon }) => {
               </Heading>
             </section>
           </header>
-          <main>
-            <section className="pokemon-type" css={sectionStyle}>
+          <main css={mainStyle}>
+            <section className="pokemon-type" css={sectionRowStyle}>
               <Heading level={2}>Type :</Heading>
               <PokemonTypeList pokemonTypes={types} />
             </section>
+            <section className="pokemon-height" css={sectionRowStyle}>
+              <Heading level={2}>
+                Height :
+                <span css={textStyle}>
+                  {`${height ? height + '"' : 'unknown'}`}
+                </span>
+              </Heading>
+            </section>
+            <section className="pokemon-weight" css={sectionRowStyle}>
+              <Heading level={2}>
+                Weight :
+                <span css={textStyle}>
+                  {`${weight ? weight + ' lbs' : 'unknown'}`}
+                </span>
+              </Heading>
+            </section>
           </main>
         </div>
-        <div className="stats">stats</div>
+        <div>
+          <Card
+            css={cardStyle}
+            cssContent={cardContentStyle}
+            withBorder
+            withShadow
+          >
+            <section className="pokemon-experience" css={sectionRowStyle}>
+              <Heading level={2} css={headingStyle}>
+                Base Experience
+                <span css={textStyle}>{`(${base_experience})`}</span>
+              </Heading>
+            </section>
+            <section className="pokemon-stats" css={sectionColumnStyle}>
+              <Heading level={2} css={headingStyle}>
+                Stats
+              </Heading>
+              <PokemonStatList pokemonStats={stats} />
+            </section>
+          </Card>
+        </div>
       </div>
     </If>
   );
