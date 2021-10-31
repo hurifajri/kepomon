@@ -32,6 +32,7 @@ export const cardStyle = css`
   transition: all 0.25s;
   transform: skew(-5deg);
   &:hover {
+    box-shadow: none;
     transform: skew(-5deg) translateX(5px);
   }
 `;
