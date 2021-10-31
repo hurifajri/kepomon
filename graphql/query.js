@@ -18,6 +18,36 @@ export const GET_POKEMON = gql`
     pokemon(name: $name) {
       id
       name
+      height
+      weight
+      base_experience
+      abilities {
+        ability {
+          name
+        }
+      }
+      moves {
+        move {
+          name
+        }
+      }
+      sprites {
+        back_default
+        back_shiny
+        front_default
+        front_shiny
+      }
+      stats {
+        base_stat
+        stat {
+          name
+        }
+      }
+      types {
+        type {
+          name
+        }
+      }
     }
   }
 `;
