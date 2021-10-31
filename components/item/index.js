@@ -8,10 +8,10 @@ import { forwardRef } from 'react';
 import { StyledItem } from '@/components/item/style';
 
 const Item = forwardRef((props, ref) => {
-  const { children, style, ...rest } = props;
+  const { children, css, ...rest } = props;
 
   return (
-    <StyledItem ref={ref} css={style} {...rest}>
+    <StyledItem ref={ref} css={css} {...rest}>
       {children}
     </StyledItem>
   );
@@ -19,7 +19,7 @@ const Item = forwardRef((props, ref) => {
 
 Item.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  css: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 export default Item;

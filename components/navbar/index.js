@@ -22,7 +22,7 @@ const Navbar = () => (
           <Item key={route.id}>
             <Link href={route.path} passHref={true}>
               <a>
-                <Card border={2} contentStyle={cardContentStyle}>
+                <Card border={2} cssContent={cardContentStyle}>
                   <StyledIcon>{route.icon}</StyledIcon>
                   <StyledRoute>{route.name}</StyledRoute>
                 </Card>

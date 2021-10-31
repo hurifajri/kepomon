@@ -29,8 +29,8 @@ const PokemonCard = ({ pokemon }) => {
           <Card
             bgColor={light}
             border={4}
-            style={cardStyle}
-            contentStyle={cardContentStyle}
+            css={cardStyle}
+            cssContent={cardContentStyle}
           >
             <StyledHeader>
               <StyledMiniCard bgColor={dark}>
@@ -49,7 +49,7 @@ const PokemonCard = ({ pokemon }) => {
                 width={100}
                 height={100}
               />
-              <Heading level={2} style={headingStyle}>
+              <Heading level={2} css={headingStyle}>
                 {pokemon.name}
               </Heading>
             </StyledMain>
