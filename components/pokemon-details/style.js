@@ -13,7 +13,7 @@ export const columnStyle = css`
 export const sectionStyle = css`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 `;
 
 export const headingStyle = css`
