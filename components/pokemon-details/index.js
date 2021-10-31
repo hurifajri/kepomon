@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 // Internal modules
 import Card from '@/components/card';
 import Heading from '@/components/heading';
+import Pokeball from '@/components/icons/pokeball';
 import If from '@/components/if';
 import {
   bottomRightStyle,
@@ -16,6 +17,7 @@ import {
   columnStyle,
   detailsStyle,
   headingStyle,
+  imageShake,
   imageStyle,
   mainStyle,
   profileStyle,
@@ -25,9 +27,11 @@ import {
   topLeftStyle,
 } from '@/components/pokemon-details/style';
 import PokemonAbilityList from '@/components/pokemon-ability-list';
+import PokemonAdd from '@/components/pokemon-add';
 import PokemonMoveList from '@/components/pokemon-move-list';
 import PokemonStatList from '@/components/pokemon-stat-list';
 import PokemonTypeList from '@/components/pokemon-type-list';
+import { useAppContext } from '@/state/context';
 import useCachedImage from '@/hooks/useCachedImage';
 import useRandomColor from '@/hooks/useRandomColor';
 
@@ -45,6 +49,9 @@ const PokemonDetails = ({ pokemon }) => {
     stats,
     moves,
   } = pokemon;
+  // Get state from context
+  const { state } = useAppContext();
+
   // Set profile image from cached or request
   const image = useCachedImage(name, initialImage);
   const profileImage = image ?? sprites.front_default;
@@ -67,8 +74,23 @@ const PokemonDetails = ({ pokemon }) => {
         <div css={profileStyle}>
           <header css={columnStyle}>
             <section className="pokemon-image" css={imageStyle}>
-              <Image src={profileImage} alt={name} width={200} height={200} />
+              <If condition={!state.catch}>
+                <Image
+                  className="image"
+                  css={!state.catch && imageShake}
+                  src={profileImage}
+                  alt={name}
+                  width={200}
+                  height={200}
+                />
+              </If>
+              <If condition={state.catch}>
+                <Pokeball size={12.5} />
+              </If>
               <span className="shadow"></span>
+            </section>
+            <section className="pokemon-add">
+              <PokemonAdd />
             </section>
             <section className="pokemon-name" css={sectionRowStyle}>
               <span css={headingStyle}>
