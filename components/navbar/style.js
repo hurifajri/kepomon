@@ -30,10 +30,8 @@ const rotate = keyframes`
 export const cardStyle = css`
   border: 2px solid var(--dark-black);
   transition: all 0.25s;
-  box-shadow: 9px 10px 0 var(--light-blue);
   transform: skew(-5deg);
   &:hover {
-    box-shadow: none;
     transform: skew(-5deg) translateX(5px);
   }
 `;

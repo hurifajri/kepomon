@@ -9,7 +9,8 @@ export const baseStyle = css`
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  margin: 25px auto;
+  margin: 0 auto;
+  padding: 25px 0;
   ${media.sm} {
     align-items: flex-start;
     max-width: 685px;

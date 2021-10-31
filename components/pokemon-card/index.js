@@ -40,6 +40,8 @@ const PokemonCard = ({ pokemon }) => {
             css={cardStyle}
             cssContent={cardContentStyle}
             style={{ '--bgColor': light }}
+            withShadow
+            withBorder
           >
             <header css={baseHeaderStyle}>
               <Card
