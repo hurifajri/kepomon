@@ -18,7 +18,7 @@ export const rowStyle = css`
 
 export const sectionColumnStyle = css`
   ${columnStyle}
-  gap: 15px;
+  gap: 10px;
 `;
 
 export const sectionRowStyle = css`
@@ -52,6 +52,9 @@ export const cardStyle = css`
 
 export const cardContentStyle = css`
   ${columnStyle}
+  ${media.sm} {
+    ${rowStyle}
+  }
   transform: skew(5deg);
 `;
 

@@ -21,6 +21,7 @@ import {
   sectionRowStyle,
   textStyle,
 } from '@/components/pokemon-details/style';
+import PokemonAbilityList from '@/components/pokemon-ability-list';
 import PokemonStatList from '@/components/pokemon-stat-list';
 import PokemonTypeList from '@/components/pokemon-type-list';
 import useRandomColor from '@/hooks/useRandomColor';
@@ -30,12 +31,13 @@ const PokemonDetails = ({ pokemon }) => {
     id,
     img,
     name,
+    types,
     height,
     weight,
     base_experience,
+    abilities,
     stats,
     sprites,
-    types,
   } = pokemon;
   const profileImage = img ?? sprites.front_default;
 
@@ -94,18 +96,24 @@ const PokemonDetails = ({ pokemon }) => {
             </section>
           </main>
         </div>
-        <div>
-          <Card
-            css={cardStyle}
-            cssContent={cardContentStyle}
-            withBorder
-            withShadow
-          >
+        <Card
+          css={cardStyle}
+          cssContent={cardContentStyle}
+          withBorder
+          withShadow
+        >
+          <div css={columnStyle}>
             <section className="pokemon-experience" css={sectionRowStyle}>
               <Heading level={2} css={headingStyle}>
                 Base Experience
                 <span css={textStyle}>{`(${base_experience})`}</span>
               </Heading>
+            </section>
+            <section className="pokemon-abilities" css={sectionColumnStyle}>
+              <Heading level={2} css={headingStyle}>
+                Abilities
+              </Heading>
+              <PokemonAbilityList pokemonAbilities={abilities} />
             </section>
             <section className="pokemon-stats" css={sectionColumnStyle}>
               <Heading level={2} css={headingStyle}>
@@ -113,8 +121,9 @@ const PokemonDetails = ({ pokemon }) => {
               </Heading>
               <PokemonStatList pokemonStats={stats} />
             </section>
-          </Card>
-        </div>
+          </div>
+          <div css={columnStyle}>bottom right</div>
+        </Card>
       </div>
     </If>
   );
