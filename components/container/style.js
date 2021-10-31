@@ -10,7 +10,7 @@ export const containerStyle = css`
   align-items: center;
   gap: 50px;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 25px;
   ${media.sm} {
     align-items: flex-start;
     max-width: 685px;
