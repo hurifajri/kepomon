@@ -10,6 +10,7 @@ import Card from '@/components/card';
 import Heading from '@/components/heading';
 import If from '@/components/if';
 import {
+  bottomRightStyle,
   cardContentStyle,
   cardStyle,
   columnStyle,
@@ -20,8 +21,10 @@ import {
   sectionColumnStyle,
   sectionRowStyle,
   textStyle,
+  topLeftStyle,
 } from '@/components/pokemon-details/style';
 import PokemonAbilityList from '@/components/pokemon-ability-list';
+import PokemonMoveList from '@/components/pokemon-move-list';
 import PokemonStatList from '@/components/pokemon-stat-list';
 import PokemonTypeList from '@/components/pokemon-type-list';
 import useRandomColor from '@/hooks/useRandomColor';
@@ -30,6 +33,7 @@ const PokemonDetails = ({ pokemon }) => {
   const {
     id,
     img,
+    sprites,
     name,
     types,
     height,
@@ -37,7 +41,7 @@ const PokemonDetails = ({ pokemon }) => {
     base_experience,
     abilities,
     stats,
-    sprites,
+    moves,
   } = pokemon;
   const profileImage = img ?? sprites.front_default;
 
@@ -102,7 +106,7 @@ const PokemonDetails = ({ pokemon }) => {
           withBorder
           withShadow
         >
-          <div css={columnStyle}>
+          <div css={topLeftStyle}>
             <section className="pokemon-experience" css={sectionRowStyle}>
               <Heading level={2} css={headingStyle}>
                 Base Experience
@@ -122,7 +126,14 @@ const PokemonDetails = ({ pokemon }) => {
               <PokemonStatList pokemonStats={stats} />
             </section>
           </div>
-          <div css={columnStyle}>bottom right</div>
+          <div css={bottomRightStyle}>
+            <section className="pokemon-moves" css={sectionColumnStyle}>
+              <Heading level={2} css={headingStyle}>
+                Moves
+              </Heading>
+              <PokemonMoveList pokemonMoves={moves} />
+            </section>
+          </div>
         </Card>
       </div>
     </If>

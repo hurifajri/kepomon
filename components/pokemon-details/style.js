@@ -36,6 +36,16 @@ export const detailsStyle = css`
   }
 `;
 
+export const topLeftStyle = css`
+  ${columnStyle}
+  flex: 1;
+`;
+
+export const bottomRightStyle = css`
+  ${columnStyle}
+  flex: 1;
+`;
+
 export const headingStyle = css`
   font-size: 25px;
 `;
@@ -47,15 +57,19 @@ export const textStyle = css`
 
 export const cardStyle = css`
   padding: 50px;
-  transform: skew(-5deg);
+  ${media.lg} {
+    transform: skew(-3deg);
+  }
 `;
 
 export const cardContentStyle = css`
   ${columnStyle}
+  ${media.lg} {
+    transform: skew(3deg);
+  }
   ${media.sm} {
     ${rowStyle}
   }
-  transform: skew(5deg);
 `;
 
 export const mainStyle = css`
