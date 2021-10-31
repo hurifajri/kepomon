@@ -32,10 +32,7 @@ export const GET_POKEMON = gql`
         }
       }
       sprites {
-        back_default
-        back_shiny
         front_default
-        front_shiny
       }
       stats {
         base_stat
