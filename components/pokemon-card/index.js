@@ -49,7 +49,7 @@ const PokemonCard = ({ pokemon }) => {
                 cssContent={miniCardContentStyle}
                 style={{ '--bgColor': dark }}
               >
-                <span className="content">{`Owned: ${0}`}</span>
+                {`Owned: ${0}`}
               </Card>
             </header>
             <main css={baseMainStyle}>
