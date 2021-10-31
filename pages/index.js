@@ -11,9 +11,12 @@ import { GET_POKEMONS } from '@/graphql/query';
 import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 import usePokemons from '@/hooks/usePokemons';
 
-const Home = ({ initialPokemons }) => {
+const Pokemons = ({ initialPokemons }) => {
+  // Set initial pokemons data from the server
   const data = usePokemons(initialPokemons);
   const { loading, error, pokemons, getPokemons } = data;
+
+  // Fetch another pokemons data in the client on scroll
   useInfiniteScroll(loading, getPokemons);
 
   if (error) return `Error! ${error.message}`;
@@ -34,6 +37,7 @@ const Home = ({ initialPokemons }) => {
 };
 
 export const getServerSideProps = async () => {
+  // Get initial pokemons data in the server
   const { data } = await client.query({ query: GET_POKEMONS, variables });
 
   return {
@@ -43,4 +47,4 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default Home;
+export default Pokemons;
