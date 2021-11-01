@@ -15,8 +15,7 @@ import { releasePokemon, selectPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
 
 const PokemonDelete = ({ pokemon }) => {
-  const { state, dispatch } = useAppContext();
-  const { dialogOpen, selectedPokemon } = state;
+  const { dialogOpen, selectedPokemon, dispatch } = useAppContext();
 
   const handleRelease = event => {
     event.preventDefault();

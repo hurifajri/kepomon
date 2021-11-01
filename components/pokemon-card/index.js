@@ -25,8 +25,7 @@ import { useAppContext } from '@/state/context';
 
 const PokemonCard = ({ pokemon }) => {
   const router = useRouter();
-  const { state } = useAppContext();
-  const { ownedPokemons } = state;
+  const { ownedPokemons } = useAppContext();
 
   const isCollectionPage = router?.pathname === '/collection';
 

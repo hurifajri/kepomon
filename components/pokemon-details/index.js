@@ -49,7 +49,7 @@ const PokemonDetails = ({ pokemon }) => {
     moves,
   } = pokemon;
   // Get state from context
-  const { state } = useAppContext();
+  const { isCatched } = useAppContext();
 
   // Set profile image from cached or request
   const image = useCachedImage(name, initialImage);
@@ -73,7 +73,7 @@ const PokemonDetails = ({ pokemon }) => {
         <div css={profileStyle}>
           <header css={headerStyle}>
             <section className="pokemon-image" css={imageStyle}>
-              <If condition={!state.isCatched}>
+              <If condition={!isCatched}>
                 <Image
                   className="image"
                   src={profileImage}
@@ -82,7 +82,7 @@ const PokemonDetails = ({ pokemon }) => {
                   height={200}
                 />
               </If>
-              <If condition={state.isCatched}>
+              <If condition={isCatched}>
                 <Pokeball size={12.5} />
               </If>
               <span className="shadow"></span>

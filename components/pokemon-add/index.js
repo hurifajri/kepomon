@@ -22,8 +22,7 @@ import { adoptPokemon, catchPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
 
 const PokemonAdd = ({ pokemon }) => {
-  const { state, dispatch } = useAppContext();
-  const { dialogOpen, isCatched, ownedPokemons } = state;
+  const { dialogOpen, isCatched, ownedPokemons, dispatch } = useAppContext();
 
   // Gwt pokemon image from cached or request
   const initialImage = pokemon.image;

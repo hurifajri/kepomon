@@ -1,5 +1,5 @@
 // External modules
-import { createContext, useContext, useMemo, useReducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 
 // Internal modules
 import appReducer from '@/state/reducer';
@@ -15,7 +15,7 @@ const AppProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(appReducer, initialState);
-  const value = { state, dispatch };
+  const value = { ...state, dispatch };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
