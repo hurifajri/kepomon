@@ -15,6 +15,11 @@ export const buttonTextStyle = css`
   text-transform: uppercase;
 `;
 
+export const headingTextStyle = css`
+  ${buttonTextStyle}
+  font-weight: 700;
+`;
+
 export const flexCenterStyle = css`
   display: flex;
   align-items: center;
