@@ -17,6 +17,18 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/maskable_icon_x192.png"></link>
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+          <link
+            rel="icon"
+            href="/favicon-16x16.png"
+            sizes="16x16"
+            type="image/png"
+          />
+          <link
+            rel="icon"
+            href="/favicon-32x32.png"
+            sizes="32x32"
+            type="image/png"
+          />
         </Head>
         <body>
           <Main />
