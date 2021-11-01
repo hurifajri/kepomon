@@ -2,6 +2,7 @@
 import {
   ADOPT_POKEMON,
   CATCH_POKEMON,
+  CHECK_AMP,
   RELEASE_POKEMON,
   SELECT_POKEMON,
   TOGGLE_DIALOG,
@@ -15,6 +16,11 @@ export const adoptPokemon = pokemon => ({
 export const catchPokemon = isCatched => ({
   type: CATCH_POKEMON,
   payload: isCatched,
+});
+
+export const checkAmp = isAmp => ({
+  type: CHECK_AMP,
+  payload: isAmp,
 });
 
 export const releasePokemon = pokemon => ({

@@ -2,6 +2,7 @@
 import {
   ADOPT_POKEMON,
   CATCH_POKEMON,
+  CHECK_AMP,
   RELEASE_POKEMON,
   SELECT_POKEMON,
   TOGGLE_DIALOG,
@@ -17,6 +18,9 @@ const appReducer = (state, action) => {
     }
     case CATCH_POKEMON: {
       return { ...state, isCatched: action.payload };
+    }
+    case CHECK_AMP: {
+      return { ...state, isAmp: action.payload };
     }
     case RELEASE_POKEMON: {
       const pokemons = state.ownedPokemons.filter(
