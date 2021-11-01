@@ -3,10 +3,10 @@ import { css } from '@emotion/react';
 
 // Internal modules
 import {
+  bigTextStyle,
   buttonLabelStyle,
   buttonStyle,
   flexCenterStyle,
-  bigTextStyle,
   smallReverseSkewStyle,
   smallSkewStyle,
   thinBorderStyle,
@@ -20,6 +20,10 @@ export const errorStyle = css`
 
 export const headingStyle = css`
   ${bigTextStyle}
+`;
+
+export const inputHeadingStyle = css`
+  text-transform: unset;
 `;
 
 export const inputStyle = css`
@@ -43,8 +47,4 @@ export const inputWrapperStyle = css`
   ${flexCenterStyle}
   flex-direction: column;
   gap: 15px;
-`;
-
-export const inputHeadingStyle = css`
-  text-transform: unset;
 `;

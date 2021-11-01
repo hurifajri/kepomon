@@ -8,13 +8,13 @@ import {
   thinBorderStyle,
 } from '@/styles/shared';
 
+export const cardContentStyle = css`
+  ${bigReverseSkewStyle}
+  display: inline-block;
+`;
+
 export const cardStyle = css`
   ${bigSkewStyle}
   ${thinBorderStyle}
   padding: 3px 5px;
-`;
-
-export const cardContentStyle = css`
-  ${bigReverseSkewStyle}
-  display: inline-block;
 `;

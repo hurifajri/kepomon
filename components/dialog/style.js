@@ -12,8 +12,6 @@ import {
   thickBorderStyle,
 } from '@/styles/shared';
 
-export { buttonLabelStyle, buttonsStyle, buttonStyle };
-
 export const backdropStyle = css`
   display: none;
   position: fixed;
@@ -33,14 +31,16 @@ export const buttonCloseStyle = css`
   cursor: pointer;
 `;
 
-export const dialogContentStyle = css`
+export { buttonLabelStyle, buttonsStyle, buttonStyle };
+
+export const cardContentStyle = css`
   ${flexCenterStyle}
   flex-direction: column;
   gap: 25px;
   padding: 25px;
 `;
 
-export const dialogStyle = css`
+export const cardStyle = css`
   ${flexCenterStyle}
   position: fixed;
   width: 80%;

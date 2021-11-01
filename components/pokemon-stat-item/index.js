@@ -9,14 +9,14 @@ import If from '@/components/if';
 import Item from '@/components/item';
 import {
   barStyle,
+  headingStyle,
   itemStyle,
-  statStyle,
 } from '@/components/pokemon-stat-item/style';
 
 const PokemonStatItem = ({ pokemonStat }) => (
   <If condition={typeof pokemonStat === 'object'}>
     <Item css={itemStyle}>
-      <Heading level={3} css={statStyle}>
+      <Heading level={3} css={headingStyle}>
         <span>{pokemonStat.name}</span>
         <span>{pokemonStat.base_stat}</span>
       </Heading>

@@ -14,8 +14,8 @@ import {
   bottomRightStyle,
   cardContentStyle,
   cardStyle,
-  columnStyle,
   detailsStyle,
+  headerStyle,
   headingStyle,
   imageStyle,
   mainStyle,
@@ -71,7 +71,7 @@ const PokemonDetails = ({ pokemon }) => {
       <Global styles={bodyStyle} />
       <div css={detailsStyle}>
         <div css={profileStyle}>
-          <header css={columnStyle}>
+          <header css={headerStyle}>
             <section className="pokemon-image" css={imageStyle}>
               <If condition={!state.isCatched}>
                 <Image

@@ -82,3 +82,15 @@ export const buttonStyle = css`
     transform: skew(-5deg) translateX(5px);
   }
 `;
+
+export const columnStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
+
+export const rowStyle = css`
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+`;

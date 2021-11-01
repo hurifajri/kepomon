@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 // Internal modules
 import media from '@/styles/media';
 
-export const topbarStyle = css`
+export const headerStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;

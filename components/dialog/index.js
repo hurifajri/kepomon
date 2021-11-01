@@ -14,8 +14,8 @@ import {
   buttonLabelStyle,
   buttonsStyle,
   buttonStyle,
-  dialogContentStyle,
-  dialogStyle,
+  cardContentStyle,
+  cardStyle,
   openStyle,
 } from '@/components/dialog/style';
 import Portal from '@/components/portal';
@@ -34,12 +34,12 @@ const Dialog = ({
 
   return (
     <If condition={mounted && typeof window !== 'undefined'}>
-      <Portal id="modal">
+      <Portal id="dialog">
         <div css={[backdropStyle, open && openStyle]}>
           <Card
             className="dialog"
-            css={dialogStyle}
-            cssContent={dialogContentStyle}
+            css={cardStyle}
+            cssContent={cardContentStyle}
             withBorder
             withShadow
           >
