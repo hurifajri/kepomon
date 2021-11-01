@@ -30,6 +30,13 @@ export const boxShadowStyle = css`
   box-shadow: 9px 10px 0 var(--light-blue);
 `;
 
+export const overlapStyle = css`
+  position: absolute;
+  right: -15px;
+  top: -30px;
+  background-color: var(--dark-white);
+`;
+
 export const smallSkewStyle = css`
   transform: skew(-5deg);
 `;
