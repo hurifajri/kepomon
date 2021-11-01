@@ -8,10 +8,9 @@ import PropTypes from 'prop-types';
 
 // Internal modules
 import Card from '@/components/card';
+import Heading from '@/components/heading';
 import If from '@/components/if';
 import {
-  buttonLabelStyle,
-  buttonStyle,
   cardContentStyle,
   cardStyle,
   headerStyle,
@@ -20,7 +19,7 @@ import {
   miniCardContentStyle,
   miniCardStyle,
 } from '@/components/pokemon-card/style';
-import Heading from '@/components/heading';
+import PokemonDelete from '@/components/pokemon-delete';
 import useRandomColor from '@/hooks/useRandomColor';
 import { useAppContext } from '@/state/context';
 
@@ -30,7 +29,6 @@ const PokemonCard = ({ pokemon }) => {
   const { ownedPokemons } = state;
 
   const isCollectionPage = router?.pathname === '/collection';
-  console.log(isCollectionPage);
 
   // Get owned state for each pokemon
   const owned = ownedPokemons.filter(({ id }) => id === pokemon.id).length;
@@ -79,9 +77,7 @@ const PokemonCard = ({ pokemon }) => {
                 </Card>
               </If>
               <If condition={isCollectionPage}>
-                <button css={buttonStyle}>
-                  <span css={buttonLabelStyle}>Release</span>
-                </button>
+                <PokemonDelete pokemon={pokemon} />
               </If>
             </header>
             <main css={mainStyle}>
