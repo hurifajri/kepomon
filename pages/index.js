@@ -24,8 +24,10 @@ const Pokemons = ({ initialPokemons }) => {
     <>
       <Head>
         <title>Képomon</title>
-        <meta name="description" content="A curious monster" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="A list of curious monsters out there"
+        />
       </Head>
       <PokemonList pokemons={pokemons} />
       <If condition={loading}>

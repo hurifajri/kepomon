@@ -14,7 +14,6 @@ const Collection = () => {
       <Head>
         <title>Collection</title>
         <meta name="description" content="My collection" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <If condition={ownedPokemons.length === 0}>
         <p>You have no Képomon yet!</p>
