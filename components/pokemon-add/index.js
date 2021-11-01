@@ -36,10 +36,10 @@ const PokemonAdd = () => {
         <span css={buttonLabelStyle}>Catch Pokemon</span>
       </button>
       <Dialog open={state.dialogOpen} handleClose={handleCloseDialog}>
-        <If condition={!state.catch}>
+        <If condition={!state.isCatched}>
           <span css={headingStyle}>Pokémon runs away!</span>
         </If>
-        <If condition={state.catch}>
+        <If condition={state.isCatched}>
           <span css={headingStyle}>You got the Pokémon!</span>
         </If>
       </Dialog>
