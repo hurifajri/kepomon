@@ -63,6 +63,7 @@ export const miniCardContentStyle = css`
 
 export const miniCardStyle = css`
   ${bigSkewStyle}
+  display: flex;
   align-items: center;
   background-color: var(--bgColor);
   padding: 3px 5px;
