@@ -18,9 +18,15 @@ export const backdropStyle = css`
 
 export const buttonStyle = css`
   ${thickBorderStyle}
+  cursor: pointer;
+  position: absolute;
+  top: -15px;
+  right: -10px;
 `;
 
-export const dialogContentStyle = css``;
+export const dialogContentStyle = css`
+  ${flexCenterStyle}
+`;
 
 export const dialogStyle = css`
   ${flexCenterStyle}
@@ -28,7 +34,7 @@ export const dialogStyle = css`
   width: 80%;
   height: auto;
   ${media.sm} {
-    width: 60%;
+    width: 40%;
   }
 `;
 
