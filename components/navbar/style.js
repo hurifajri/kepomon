@@ -3,7 +3,7 @@ import { css, keyframes } from '@emotion/react';
 
 // Internal modules
 import {
-  buttonTextStyle,
+  bigTextStyle,
   flexCenterStyle,
   smallReverseSkewStyle,
   smallSkewStyle,
@@ -53,6 +53,6 @@ export const listStyle = css`
 `;
 
 export const routeStyle = css`
-  ${buttonTextStyle}
+  ${bigTextStyle}
   ${textShadowStyle}
 `;

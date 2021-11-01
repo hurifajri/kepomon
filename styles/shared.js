@@ -9,15 +9,10 @@ export const bigReverseSkewStyle = css`
   transform: skew(15deg);
 `;
 
-export const buttonTextStyle = css`
+export const bigTextStyle = css`
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
-`;
-
-export const headingTextStyle = css`
-  ${buttonTextStyle}
-  font-weight: 700;
 `;
 
 export const flexCenterStyle = css`
@@ -32,9 +27,8 @@ export const boxShadowStyle = css`
 
 export const overlapStyle = css`
   position: absolute;
-  right: -15px;
   top: -30px;
-  background-color: var(--dark-white);
+  right: -15px;
 `;
 
 export const smallSkewStyle = css`
@@ -62,7 +56,7 @@ export const thinBorderStyle = css`
 `;
 
 export const buttonLabelStyle = css`
-  ${buttonTextStyle}
+  ${bigTextStyle}
   ${flexCenterStyle}
   ${smallReverseSkewStyle}
   ${textShadowStyle}

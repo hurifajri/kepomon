@@ -6,7 +6,7 @@ import {
   buttonLabelStyle,
   buttonStyle,
   flexCenterStyle,
-  headingTextStyle,
+  bigTextStyle,
   smallReverseSkewStyle,
   smallSkewStyle,
   thinBorderStyle,
@@ -19,7 +19,7 @@ export const errorStyle = css`
 `;
 
 export const headingStyle = css`
-  ${headingTextStyle}
+  ${bigTextStyle}
 `;
 
 export const inputStyle = css`

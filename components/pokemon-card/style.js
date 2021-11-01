@@ -70,5 +70,6 @@ export const miniCardStyle = css`
   &.counter {
     ${thinBorderStyle}
     ${overlapStyle}
+    background-color: var(--dark-white);
   }
 `;

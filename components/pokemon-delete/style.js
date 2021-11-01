@@ -5,13 +5,13 @@ import { css } from '@emotion/react';
 import {
   bigReverseSkewStyle,
   bigSkewStyle,
-  headingTextStyle,
+  bigTextStyle,
   overlapStyle,
   thinBorderStyle,
 } from '@/styles/shared';
 
 export const headingStyle = css`
-  ${headingTextStyle}
+  ${bigTextStyle}
 `;
 
 export const overlapButtonLabelStyle = css`
