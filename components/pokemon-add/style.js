@@ -21,6 +21,11 @@ export const buttonLabelStyle = css`
   margin: 6px -10px 5px 20px;
 `;
 
+export const buttonsStyles = css`
+  display: flex;
+  gap: 30px;
+`;
+
 export const buttonStyle = css`
   ${boxShadowStyle}
   ${smallSkewStyle}
@@ -37,5 +42,4 @@ export const buttonStyle = css`
 
 export const headingStyle = css`
   ${headingTextStyle}
-  padding: 10px;
 `;
