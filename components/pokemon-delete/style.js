@@ -10,17 +10,13 @@ import {
   thinBorderStyle,
 } from '@/styles/shared';
 
-export const headingStyle = css`
-  ${bigTextStyle}
-`;
-
-export const overlapButtonLabelStyle = css`
+export const buttonLabelStyle = css`
   ${bigReverseSkewStyle}
   font-size: 12px;
   font-weight: 700;
 `;
 
-export const overlapButtonStyle = css`
+export const buttonStyle = css`
   ${bigSkewStyle}
   ${overlapStyle}
   ${thinBorderStyle}
@@ -28,4 +24,8 @@ export const overlapButtonStyle = css`
   &:hover {
     color: var(--light-blue);
   }
+`;
+
+export const headingStyle = css`
+  ${bigTextStyle}
 `;

@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 import Heading from '@/components/heading';
 import Dialog from '@/components/dialog';
 import {
+  buttonLabelStyle,
+  buttonStyle,
   headingStyle,
-  overlapButtonLabelStyle,
-  overlapButtonStyle,
 } from '@/components/pokemon-delete/style';
 import { releasePokemon, selectPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
@@ -43,10 +43,10 @@ const PokemonDelete = ({ pokemon }) => {
   return (
     <>
       <button
-        css={overlapButtonStyle}
+        css={buttonStyle}
         onClick={event => handleConfirm(event, pokemon)}
       >
-        <span css={overlapButtonLabelStyle}>Release</span>
+        <span css={buttonLabelStyle}>Release</span>
       </button>
       <Dialog
         open={dialogOpen}
