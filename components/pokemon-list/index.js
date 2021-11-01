@@ -15,7 +15,7 @@ const PokemonList = ({ pokemons }) => (
       {
         // Iterate each pokemon from pokemons
         pokemons?.map(pokemon => (
-          <PokemonItem pokemon={pokemon} key={pokemon.id} />
+          <PokemonItem pokemon={pokemon} key={pokemon.nickname ?? pokemon.id} />
         ))
       }
     </List>
