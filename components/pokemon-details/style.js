@@ -3,6 +3,11 @@ import { css, keyframes } from '@emotion/react';
 
 // Internal modules
 import media from '@/styles/media';
+import {
+  flexCenterStyle,
+  smallReverseSkewStyle,
+  smallSkewStyle,
+} from '@/styles/shared';
 
 export const columnStyle = css`
   display: flex;
@@ -64,14 +69,15 @@ export const cardStyle = css`
   padding: 50px;
   flex: 3;
   ${media.lg} {
-    transform: skew(-3deg);
+    ${smallSkewStyle}
   }
 `;
 
 export const cardContentStyle = css`
   ${columnStyle}
+  width: 100%;
   ${media.lg} {
-    transform: skew(3deg);
+    ${smallReverseSkewStyle}
   }
   ${media.sm} {
     ${rowStyle}
@@ -84,9 +90,8 @@ export const mainStyle = css`
 `;
 
 export const imageStyle = css`
-  display: flex;
+  ${flexCenterStyle}
   flex-direction: column;
-  align-items: center;
   position: relative;
 
   & .shadow {
@@ -98,23 +103,4 @@ export const imageStyle = css`
     position: absolute;
     bottom: -10px;
   }
-`;
-
-const shake = keyframes`
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-`;
-
-export const imageShake = css`
-  animation: ${shake} 0.5s;
-  animation-iteration-count: initial;
 `;

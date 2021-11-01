@@ -1,15 +1,21 @@
 // External modules
 import { css } from '@emotion/react';
 
-export const cardStyle = css`
-  display: flex;
-  background-color: var(--dark-white);
-`;
+// Internal modules
+import { boxShadowStyle, thickBorderStyle } from '@/styles/shared';
 
 export const cardBorderStyle = css`
-  border: 4px solid var(--dark-black);
+  ${thickBorderStyle}
+`;
+
+export const cardContentStyle = css`
+  width: 100%;
 `;
 
 export const cardShadowStyle = css`
-  box-shadow: 9px 10px 0 var(--light-blue);
+  ${boxShadowStyle}
+`;
+
+export const cardStyle = css`
+  background-color: var(--dark-white);
 `;

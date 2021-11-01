@@ -7,6 +7,7 @@ import { forwardRef } from 'react';
 // Internal modules
 import {
   cardBorderStyle,
+  cardContentStyle,
   cardShadowStyle,
   cardStyle,
 } from '@/components/card/style';
@@ -26,7 +27,7 @@ const Card = forwardRef((props, ref) => {
       ]}
       {...rest}
     >
-      <div className="card-content" css={cssContent}>
+      <div className="card-content" css={[cardContentStyle, cssContent]}>
         {children}
       </div>
     </div>

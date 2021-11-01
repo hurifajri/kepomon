@@ -11,13 +11,14 @@ import {
   cardContentStyle,
   cardStyle,
   iconStyle,
+  listStyle,
   routeStyle,
 } from '@/components/navbar/style';
 import routes from '@/utils/routes';
 
 const Navbar = () => (
   <nav>
-    <List>
+    <List css={listStyle}>
       {
         // Iterate each route from routes
         routes.map(route => (

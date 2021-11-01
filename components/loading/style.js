@@ -1,6 +1,9 @@
 // External modules
 import { css, keyframes } from '@emotion/react';
 
+// Internal modules
+import { flexCenterStyle } from '@/styles/shared';
+
 const rotate = keyframes`
   0% {
     transform: rotate(0deg);
@@ -11,10 +14,7 @@ const rotate = keyframes`
 `;
 
 export const loadingStyle = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  ${flexCenterStyle}
   & svg {
     animation: ${rotate} ease-in-out 1s;
     animation-delay: 0.05s;

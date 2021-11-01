@@ -9,6 +9,7 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const initialState = {
     catch: false,
+    dialogOpen: false,
   };
 
   const [state, dispatch] = useReducer(appReducer, initialState);

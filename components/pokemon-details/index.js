@@ -17,7 +17,6 @@ import {
   columnStyle,
   detailsStyle,
   headingStyle,
-  imageShake,
   imageStyle,
   mainStyle,
   profileStyle,
@@ -77,7 +76,6 @@ const PokemonDetails = ({ pokemon }) => {
               <If condition={!state.catch}>
                 <Image
                   className="image"
-                  css={!state.catch && imageShake}
                   src={profileImage}
                   alt={name}
                   width={200}

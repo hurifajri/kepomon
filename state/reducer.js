@@ -1,10 +1,13 @@
 // Internal modules
-import { CATCH_POKEMON } from '@/state/action-types';
+import { CATCH_POKEMON, TOGGLE_DIALOG } from '@/state/action-types';
 
 const appReducer = (state, action) => {
   switch (action.type) {
     case CATCH_POKEMON: {
-      return { ...state, catch: action.payload };
+      return { ...state, catch: action.payload, dialogOpen: true };
+    }
+    case TOGGLE_DIALOG: {
+      return { ...state, dialogOpen: !state.dialogOpen };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);

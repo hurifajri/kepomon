@@ -3,21 +3,19 @@ import { css } from '@emotion/react';
 
 // Internal modules
 import media from '@/styles/media';
+import { flexCenterStyle } from '@/styles/shared';
 
 export const containerStyle = css`
-  display: flex;
+  ${flexCenterStyle}
   flex-direction: column;
-  align-items: center;
   gap: 50px;
   margin: 0 auto;
   padding: 25px;
   ${media.sm} {
-    align-items: flex-start;
     max-width: 685px;
-    gap: 30px;
   }
   ${media.md} {
-    max-width: 768px;
+    max-width: 900px;
   }
   ${media.xl} {
     max-width: 1024px;

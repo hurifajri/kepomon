@@ -11,17 +11,13 @@ import Item from '@/components/item';
 import {
   cardContentStyle,
   cardStyle,
-  itemStyle,
-  statStyle,
 } from '@/components/pokemon-move-item/style';
 
 const PokemonMoveItem = ({ pokemonMove }) => (
   <If condition={typeof pokemonMove === 'object'}>
-    <Item css={itemStyle}>
+    <Item>
       <Card css={cardStyle} cssContent={cardContentStyle}>
-        <Heading level={3} css={statStyle}>
-          {pokemonMove.name}
-        </Heading>
+        <Heading level={3}>{pokemonMove.name}</Heading>
       </Card>
     </Item>
   </If>

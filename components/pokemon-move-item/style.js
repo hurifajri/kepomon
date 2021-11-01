@@ -1,23 +1,20 @@
 // External modules
 import { css } from '@emotion/react';
 
-export const itemStyle = css`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-`;
-
-export const statStyle = css`
-  justify-content: space-between;
-`;
+// Internal modules
+import {
+  bigReverseSkewStyle,
+  bigSkewStyle,
+  thinBorderStyle,
+} from '@/styles/shared';
 
 export const cardStyle = css`
-  transform: skew(-15deg);
-  padding: 5px 8px;
-  border: 2px solid var(--dark-black);
+  ${bigSkewStyle}
+  ${thinBorderStyle}
+  padding: 3px 5px;
 `;
 
 export const cardContentStyle = css`
+  ${bigReverseSkewStyle}
   display: inline-block;
-  transform: skew(15deg);
 `;
