@@ -11,6 +11,29 @@ import {
   thinBorderStyle,
 } from '@/styles/shared';
 
+const overlapStyle = css`
+  position: absolute;
+  right: -15px;
+  top: -30px;
+  background-color: var(--dark-white);
+`;
+
+export const buttonLabelStyle = css`
+  ${bigReverseSkewStyle}
+  font-size: 12px;
+  font-weight: 700;
+`;
+
+export const buttonStyle = css`
+  ${bigSkewStyle}
+  ${overlapStyle}
+  ${thinBorderStyle}
+  cursor: pointer;
+  &:hover {
+    color: var(--light-blue);
+  }
+`;
+
 export const cardContentStyle = css`
   ${smallReverseSkewStyle}
   position: relative;
@@ -67,10 +90,7 @@ export const miniCardStyle = css`
   padding: 3px 5px;
   z-index: 1;
   &.counter {
-    position: absolute;
-    right: -15px;
-    top: -30px;
     ${thinBorderStyle}
-    background-color: var(--dark-white);
+    ${overlapStyle}
   }
 `;
