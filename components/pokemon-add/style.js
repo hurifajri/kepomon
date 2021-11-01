@@ -6,6 +6,7 @@ import {
   boxShadowStyle,
   buttonTextStyle,
   flexCenterStyle,
+  headingTextStyle,
   smallReverseSkewStyle,
   smallSkewStyle,
   textShadowStyle,
@@ -32,4 +33,9 @@ export const buttonStyle = css`
     box-shadow: none;
     transform: skew(-5deg) translateX(5px);
   }
+`;
+
+export const headingStyle = css`
+  ${headingTextStyle}
+  padding: 10px;
 `;
