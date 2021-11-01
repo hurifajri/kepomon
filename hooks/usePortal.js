@@ -1,5 +1,3 @@
-// Credit: https://www.jayfreestone.com/writing/react-portals-with-hooks/
-
 // External modules
 import { useEffect, useRef } from 'react';
 
@@ -78,3 +76,5 @@ const usePortal = id => {
 };
 
 export default usePortal;
+
+// Credit: https://www.jayfreestone.com/writing/react-portals-with-hooks/

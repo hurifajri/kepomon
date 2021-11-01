@@ -13,10 +13,9 @@ import usePokemons from '@/hooks/usePokemons';
 
 const Pokemons = ({ initialPokemons }) => {
   // Set initial pokemons data from the server
+  // and fetch another pokemons data in the client
   const data = usePokemons(initialPokemons);
   const { loading, error, pokemons, getPokemons } = data;
-
-  // Fetch another pokemons data in the client on scroll
   useInfiniteScroll(loading, getPokemons);
 
   if (error) return `Error! ${error.message}`;
@@ -24,8 +23,8 @@ const Pokemons = ({ initialPokemons }) => {
   return (
     <>
       <Head>
-        <title>Kepomon</title>
-        <meta name="description" content="Let's catch a kepo monster" />
+        <title>Képomon</title>
+        <meta name="description" content="A curious monster" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PokemonList pokemons={pokemons} />
