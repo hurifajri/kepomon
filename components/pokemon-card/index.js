@@ -25,6 +25,9 @@ const PokemonCard = ({ pokemon }) => {
   const flag = pokemon.id % 3;
   const { light, dark } = useRandomColor(flag);
 
+  // Get pokemon image
+  const image = pokemon.dreamworld ?? pokemon.image;
+
   return (
     <If condition={typeof pokemon === 'object'}>
       <Link
@@ -61,12 +64,7 @@ const PokemonCard = ({ pokemon }) => {
               </Card>
             </header>
             <main css={mainStyle}>
-              <Image
-                src={pokemon.dreamworld}
-                alt={pokemon.name}
-                width={100}
-                height={100}
-              />
+              <Image src={image} alt={pokemon.name} width={100} height={100} />
               <Heading level={2} css={headingStyle}>
                 {pokemon.name}
               </Heading>
