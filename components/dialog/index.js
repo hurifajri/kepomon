@@ -13,9 +13,10 @@ import {
   dialogStyle,
   openStyle,
 } from '@/components/dialog/style';
+import Portal from '@/components/portal';
 
-const Dialog = ({ children, onClose, open }) => {
-  return (
+const Dialog = ({ children, onClose, open }) => (
+  <Portal id="modal">
     <div css={[backdropStyle, open && openStyle]}>
       <Card
         className="dialog"
@@ -30,8 +31,8 @@ const Dialog = ({ children, onClose, open }) => {
         </button>
       </Card>
     </div>
-  );
-};
+  </Portal>
+);
 
 Dialog.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
