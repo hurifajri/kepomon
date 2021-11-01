@@ -14,15 +14,22 @@ import {
   buttonStyle,
   errorStyle,
   headingStyle,
+  inputHeadingStyle,
   inputStyle,
   inputWrapperStyle,
 } from '@/components/pokemon-add/style';
+import useCachedImage from '@/hooks/useCachedImage';
 import { adoptPokemon, catchPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
 
 const PokemonAdd = ({ pokemon }) => {
   const { state, dispatch } = useAppContext();
   const { dialogOpen, isCatched, ownedPokemons } = state;
+
+  // Gwt pokemon image from cached or request
+  const initialImage = pokemon.image;
+  const cachedImage = useCachedImage(pokemon.name, initialImage);
+  const image = cachedImage ?? pokemon.sprites.front_default;
 
   // State for storing nickname and its error message
   const [nickname, setNickname] = useState('');
@@ -48,15 +55,21 @@ const PokemonAdd = ({ pokemon }) => {
     const isAdopted = isAdoptedPokemon(nickname);
 
     // Adopt new pokemon
-    if (!isAdopted) {
-      const newPokemon = { ...pokemon, nickname };
+    if (!isAdopted && nickname) {
+      const newPokemon = { ...pokemon, image, nickname };
       dispatch(adoptPokemon(newPokemon));
       handleClose();
 
       return;
     }
+
+    if (!nickname) {
+      setErrorMessage("The nickname can't be empty");
+      return;
+    }
+
     // Otherwise, set error message
-    setErrorMessage('The nickname is already taken!');
+    setErrorMessage('This nickname is already taken!');
   };
 
   // Handle click for catching pokemon
@@ -77,28 +90,25 @@ const PokemonAdd = ({ pokemon }) => {
     dispatch(toggleDialog());
   };
 
-  console.log('ownedPokemons', ownedPokemons);
-  console.log('errorMessage', errorMessage);
-
   return (
     <>
       <button css={buttonStyle} onClick={handleCatch}>
-        <span css={buttonLabelStyle}>Catch Pokémon</span>
+        <span css={buttonLabelStyle}>Catch Képomon</span>
       </button>
       <Dialog open={dialogOpen} onClose={handleClose}>
         <If condition={!isCatched}>
           <Heading level={2} css={headingStyle}>
-            Pokémon runs away!
+            Képomon runs away!
           </Heading>
         </If>
         <If condition={isCatched}>
           <Heading level={2} css={headingStyle}>
-            You got the Pokémon!
+            You got the Képomon!
           </Heading>
           <section css={inputWrapperStyle}>
-            <Heading level={3}>
+            <Heading level={3} css={inputHeadingStyle}>
               <If condition={errorMessage === ''}>
-                Give your new Pokémon a nickname!
+                Give your new Képomon a nickname!
               </If>
               <If condition={errorMessage !== ''}>{errorMessage}</If>
             </Heading>

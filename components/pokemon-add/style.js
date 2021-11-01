@@ -32,6 +32,7 @@ export const buttonStyle = css`
   ${thinBorderStyle}
   background-color: var(--dark-white);
   padding: 0;
+  width: 100%;
   cursor: pointer;
   transition: all 0.25s;
   &:active {
@@ -69,4 +70,8 @@ export const inputWrapperStyle = css`
   ${flexCenterStyle}
   flex-direction: column;
   gap: 15px;
+`;
+
+export const inputHeadingStyle = css`
+  text-transform: unset;
 `;
