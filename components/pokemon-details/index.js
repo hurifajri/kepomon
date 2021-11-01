@@ -88,7 +88,7 @@ const PokemonDetails = ({ pokemon }) => {
               <span className="shadow"></span>
             </section>
             <section className="pokemon-add">
-              <PokemonAdd />
+              <PokemonAdd pokemon={pokemon} />
             </section>
             <section className="pokemon-name" css={sectionRowStyle}>
               <span css={headingStyle}>

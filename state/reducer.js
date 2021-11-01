@@ -1,8 +1,18 @@
 // Internal modules
-import { CATCH_POKEMON, TOGGLE_DIALOG } from '@/state/action-types';
+import {
+  ADOPT_POKEMON,
+  CATCH_POKEMON,
+  TOGGLE_DIALOG,
+} from '@/state/action-types';
 
 const appReducer = (state, action) => {
   switch (action.type) {
+    case ADOPT_POKEMON: {
+      return {
+        ...state,
+        ownedPokemons: [...state.ownedPokemons, action.payload],
+      };
+    }
     case CATCH_POKEMON: {
       return { ...state, isCatched: action.payload };
     }
