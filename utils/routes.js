@@ -12,7 +12,7 @@ const routes = [
   {
     id: 2,
     path: '/collection',
-    name: 'My Pokemons',
+    name: 'My Képomons',
     icon: <Pokeball size={3} />,
   },
 ];
