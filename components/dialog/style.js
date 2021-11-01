@@ -3,7 +3,15 @@ import { css } from '@emotion/react';
 
 // Internal modules
 import media from '@/styles/media';
-import { flexCenterStyle, thickBorderStyle } from '@/styles/shared';
+import {
+  buttonLabelStyle,
+  buttonsStyle,
+  buttonStyle,
+  flexCenterStyle,
+  thickBorderStyle,
+} from '@/styles/shared';
+
+export { buttonLabelStyle, buttonsStyle, buttonStyle };
 
 export const backdropStyle = css`
   display: none;
@@ -16,7 +24,7 @@ export const backdropStyle = css`
   z-index: 10;
 `;
 
-export const buttonStyle = css`
+export const buttonCloseStyle = css`
   ${thickBorderStyle}
   cursor: pointer;
   position: absolute;

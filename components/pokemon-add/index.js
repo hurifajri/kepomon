@@ -10,7 +10,6 @@ import If from '@/components/if';
 import Dialog from '@/components/dialog';
 import {
   buttonLabelStyle,
-  buttonsStyles,
   buttonStyle,
   errorStyle,
   headingStyle,
@@ -95,7 +94,14 @@ const PokemonAdd = ({ pokemon }) => {
       <button css={buttonStyle} onClick={handleCatch}>
         <span css={buttonLabelStyle}>Catch Képomon</span>
       </button>
-      <Dialog open={dialogOpen} onClose={handleClose}>
+      <Dialog
+        open={dialogOpen}
+        onCancel={handleClose}
+        cancelText="Release"
+        onConfirm={handleAdopt}
+        confirmText="Adopt"
+        withButtons={isCatched}
+      >
         <If condition={!isCatched}>
           <Heading level={2} css={headingStyle}>
             Képomon runs away!
@@ -115,16 +121,6 @@ const PokemonAdd = ({ pokemon }) => {
             <div css={[inputStyle, errorMessage && errorStyle]}>
               <input value={nickname} onChange={handleNickname} autoFocus />
             </div>
-          </section>
-          <section css={buttonsStyles}>
-            <button css={buttonStyle} onClick={handleClose}>
-              <span css={buttonLabelStyle}>Release</span>
-            </button>
-            <button css={buttonStyle}>
-              <span css={buttonLabelStyle} onClick={handleAdopt}>
-                Adopt
-              </span>
-            </button>
           </section>
         </If>
       </Dialog>

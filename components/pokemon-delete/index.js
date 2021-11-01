@@ -7,9 +7,6 @@ import PropTypes from 'prop-types';
 import Heading from '@/components/heading';
 import Dialog from '@/components/dialog';
 import {
-  buttonLabelStyle,
-  buttonsStyles,
-  buttonStyle,
   headingStyle,
   overlapButtonLabelStyle,
   overlapButtonStyle,
@@ -51,20 +48,16 @@ const PokemonDelete = ({ pokemon }) => {
       >
         <span css={overlapButtonLabelStyle}>Release</span>
       </button>
-      <Dialog open={dialogOpen} onClose={handleClose}>
+      <Dialog
+        open={dialogOpen}
+        onCancel={handleClose}
+        cancelText="Keep"
+        onConfirm={handleRelease}
+        confirmText="Release"
+      >
         <Heading level={2} css={headingStyle}>
           Are you sure to release this adorable Képomon?
         </Heading>
-        <section css={buttonsStyles}>
-          <button css={buttonStyle}>
-            <span css={buttonLabelStyle} onClick={handleClose}>
-              Keep
-            </span>
-          </button>
-          <button css={buttonStyle} onClick={handleRelease}>
-            <span css={buttonLabelStyle}>Release</span>
-          </button>
-        </section>
       </Dialog>
     </>
   );
