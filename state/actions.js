@@ -2,6 +2,8 @@
 import {
   ADOPT_POKEMON,
   CATCH_POKEMON,
+  RELEASE_POKEMON,
+  SELECT_POKEMON,
   TOGGLE_DIALOG,
 } from '@/state/action-types';
 
@@ -13,6 +15,16 @@ export const adoptPokemon = pokemon => ({
 export const catchPokemon = isCatched => ({
   type: CATCH_POKEMON,
   payload: isCatched,
+});
+
+export const releasePokemon = pokemon => ({
+  type: RELEASE_POKEMON,
+  payload: pokemon,
+});
+
+export const selectPokemon = pokemon => ({
+  type: SELECT_POKEMON,
+  payload: pokemon,
 });
 
 export const toggleDialog = () => ({

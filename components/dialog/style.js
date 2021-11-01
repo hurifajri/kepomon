@@ -12,7 +12,7 @@ export const backdropStyle = css`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10;
 `;
 
