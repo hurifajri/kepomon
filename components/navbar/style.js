@@ -2,6 +2,7 @@
 import { css, keyframes } from '@emotion/react';
 
 // Internal modules
+import media from '@/styles/media';
 import {
   bigTextStyle,
   flexCenterStyle,
@@ -50,6 +51,10 @@ export const iconStyle = css`
 
 export const listStyle = css`
   gap: 50px;
+  ${media.xs} {
+    flex-direction: column;
+    gap: 25px;
+  }
 `;
 
 export const routeStyle = css`

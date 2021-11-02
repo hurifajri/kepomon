@@ -123,7 +123,12 @@ const PokemonAdd = ({ pokemon }) => {
               <If condition={errorMessage !== ''}>{errorMessage}</If>
             </Heading>
             <div css={[inputStyle, errorMessage && errorStyle]}>
-              <input value={nickname} onChange={handleNickname} autoFocus />
+              <input
+                value={nickname}
+                onChange={handleNickname}
+                autoFocus
+                maxLength={15}
+              />
             </div>
           </section>
         </If>

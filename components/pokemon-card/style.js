@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 
 // Internal modules
+import media from '@/styles/media';
 import {
   bigReverseSkewStyle,
   bigSkewStyle,
@@ -19,6 +20,10 @@ export const cardContentStyle = css`
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  ${media.xs} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const cardStyle = css`
@@ -29,6 +34,9 @@ export const cardStyle = css`
   &:hover {
     box-shadow: none;
     transform: skew(-5deg) translateX(5px);
+  }
+  ${media.xs} {
+    padding: 15px 15px 38px 15px;
   }
 `;
 
@@ -43,6 +51,9 @@ export const headingStyle = css`
   text-transform: uppercase;
   z-index: 1;
   ${textShadowStyle}
+  ${media.xs} {
+    font-size: 10px;
+  }
 `;
 
 export const mainStyle = css`
@@ -52,6 +63,10 @@ export const mainStyle = css`
   gap: 13px;
   position: absolute;
   top: 30px;
+  ${media.xs} {
+    width: 50px;
+    top: 20px;
+  }
 `;
 
 export const miniCardContentStyle = css`
@@ -59,6 +74,9 @@ export const miniCardContentStyle = css`
   display: inline-block;
   font-size: 12px;
   font-weight: 700;
+  ${media.xs} {
+    font-size: 9px;
+  }
 `;
 
 export const miniCardStyle = css`
@@ -67,7 +85,6 @@ export const miniCardStyle = css`
   align-items: center;
   background-color: var(--bgColor);
   padding: 3px 5px;
-  z-index: 1;
   &.counter {
     ${thinBorderStyle}
     ${overlapStyle}

@@ -129,7 +129,7 @@ const PokemonDetails = ({ pokemon }) => {
           <div css={topLeftStyle}>
             <section className="pokemon-experience" css={sectionRowStyle}>
               <Heading level={2} css={headingStyle}>
-                Base Experience
+                Experience
                 <span css={textStyle}>{`(${base_experience})`}</span>
               </Heading>
             </section>
