@@ -89,8 +89,21 @@ export const columnStyle = css`
   gap: 25px;
 `;
 
+export const headingStyle = css`
+  ${bigTextStyle}
+  font-weight: 700;
+  text-align: center;
+`;
+
 export const rowStyle = css`
   display: flex;
   flex-direction: row;
   gap: 25px;
+`;
+
+export const sectionStyle = css`
+  ${flexCenterStyle}
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
 `;
