@@ -5,6 +5,7 @@ const runtimeCaching = require('next-pwa/cache');
 const config = {
   images: {
     domains: ['raw.githubusercontent.com'],
+    minimumCacheTTL: 60,
   },
   pwa: {
     dest: 'public',
