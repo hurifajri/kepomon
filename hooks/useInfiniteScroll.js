@@ -22,7 +22,7 @@ const useInfiniteScroll = (loading, callback) => {
   };
 
   useEffect(() => {
-    // Add `scroll` event listener once the page is mounted
+    // Add `scroll` event listener
     window.addEventListener('scroll', scrollListener);
 
     // Clean the even when unmounted

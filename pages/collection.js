@@ -38,6 +38,7 @@ const Collection = () => {
         <title>Collection</title>
         <meta name="description" content="My collection" />
       </Head>
+      {/* Ensure the nodes are rendered once mounted */}
       <If condition={mounted}>
         <If condition={ownedPokemons.length === 0}>
           <p>You have no Képomon yet!</p>

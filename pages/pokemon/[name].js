@@ -2,22 +2,31 @@
 import Head from 'next/head';
 
 // Internal modules
+import If from '@/components/if';
 import PokemonDetails from '@/components/pokemon-details';
 import client from '@/graphql/client';
 import { GET_POKEMON } from '@/graphql/query';
+import useMounted from '@/hooks/useMounted';
 
-const Pokemon = ({ pokemon }) => (
-  <>
-    <Head>
-      <title>{`${pokemon.name}'s Profile`}</title>
-      <meta
-        name="description"
-        content={`The complete information about ${pokemon.name}`}
-      />
-    </Head>
-    <PokemonDetails pokemon={pokemon} />
-  </>
-);
+const Pokemon = ({ pokemon }) => {
+  const mounted = useMounted();
+
+  return (
+    <>
+      <Head>
+        <title>{`${pokemon.name}'s Profile`}</title>
+        <meta
+          name="description"
+          content={`The complete information about ${pokemon.name}`}
+        />
+      </Head>
+      {/* Ensure the nodes are rendered once mounted */}
+      <If condition={mounted}>
+        <PokemonDetails pokemon={pokemon} />
+      </If>
+    </>
+  );
+};
 
 export const getServerSideProps = async context => {
   // Get pokemon name from context
