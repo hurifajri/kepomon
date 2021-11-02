@@ -18,6 +18,7 @@ import {
   imageStyle,
   mainStyle,
   profileStyle,
+  sectionCenterStyle,
   sectionColumnStyle,
   sectionRowStyle,
   textStyle,
@@ -85,7 +86,7 @@ const PokemonDetails = ({ pokemon }) => {
               </If>
               <span className="shadow"></span>
             </section>
-            <section className="pokemon-add">
+            <section className="pokemon-add" css={sectionCenterStyle}>
               <PokemonAdd pokemon={pokemon} />
             </section>
             <section className="pokemon-name" css={sectionRowStyle}>

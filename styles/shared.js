@@ -1,6 +1,9 @@
 // External modules
 import { css } from '@emotion/react';
 
+// Internal modules
+import media from '@/styles/media';
+
 export const bigSkewStyle = css`
   transform: skew(-15deg);
 `;
@@ -74,7 +77,6 @@ export const buttonStyle = css`
   ${thinBorderStyle}
   background-color: var(--dark-white);
   padding: 0;
-  width: 100%;
   cursor: pointer;
   transition: all 0.25s;
   &:active {
@@ -87,6 +89,13 @@ export const columnStyle = css`
   display: flex;
   flex-direction: column;
   gap: 25px;
+`;
+
+export const dialogStyle = css`
+  width: 80%;
+  ${media.sm} {
+    width: 400px;
+  }
 `;
 
 export const headingStyle = css`

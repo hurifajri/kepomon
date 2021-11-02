@@ -1,11 +1,13 @@
 // External modules
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // Internal modules
 import Dialog from '@/components/dialog';
 import Heading from '@/components/heading';
 import If from '@/components/if';
+import MessageBox from '@/components/message-box';
 import PokemonList from '@/components/pokemon-list';
 import useMounted from '@/hooks/useMounted';
 import { releasePokemon, toggleDialog } from '@/state/actions';
@@ -13,6 +15,8 @@ import { useAppContext } from '@/state/context';
 import { headingStyle, sectionStyle } from '@/styles/shared';
 
 const Collection = () => {
+  const router = useRouter();
+
   const { ownedPokemons, dialogOpen, selectedPokemon, dispatch } =
     useAppContext();
   const { nickname, name, image } = selectedPokemon ?? {};
@@ -32,6 +36,9 @@ const Collection = () => {
     dispatch(toggleDialog());
   };
 
+  // Go to pokemon list
+  const handleHome = () => router.push('/');
+
   return (
     <>
       <Head>
@@ -41,7 +48,11 @@ const Collection = () => {
       {/* Ensure the nodes are rendered once mounted */}
       <If condition={mounted}>
         <If condition={ownedPokemons.length === 0}>
-          <p>You have no Képomon yet!</p>
+          <MessageBox
+            message="You have no Képomon yet!"
+            clickText="Catch one?"
+            onClick={handleHome}
+          />
         </If>
         <If condition={ownedPokemons.length !== 0}>
           <PokemonList pokemons={ownedPokemons} />
