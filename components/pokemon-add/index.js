@@ -1,12 +1,11 @@
 // External modules
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 // Internal modules
-import Heading from '@/components/heading';
 import If from '@/components/if';
-import Dialog from '@/components/dialog';
 import {
   buttonLabelStyle,
   buttonStyle,
@@ -17,8 +16,11 @@ import {
   sectionStyle,
 } from '@/components/pokemon-add/style';
 import useCachedImage from '@/hooks/useCachedImage';
-import { adoptPokemon, catchPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
+
+// Dynamic internal modules
+const Dialog = dynamic(() => import('@/components/dialog'), { ssr: false });
+const Heading = dynamic(() => import('@/components/heading'), { ssr: false });
 
 const PokemonAdd = ({ pokemon }) => {
   const { dialogOpen, isCatched, ownedPokemons, dispatch } = useAppContext();
@@ -32,27 +34,35 @@ const PokemonAdd = ({ pokemon }) => {
   const [nickname, setNickname] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Find out existing pokemon in store
-  const isAdoptedPokemon = nickname => {
-    const findPokemon = pokemon => pokemon.nickname === nickname;
-    const pokemon = ownedPokemons.find(findPokemon);
-    const isAdopted = typeof pokemon !== 'undefined';
-
-    return isAdopted;
-  };
-
   // Set nickname based on user input
   const handleNickname = event => {
     const name = event.target.value;
     setNickname(name);
   };
 
-  const handleAdopt = () => {
+  // Submit an action on enter in the text field
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') handleAdopt();
+  };
+
+  const handleAdopt = async () => {
+    // Find out existing pokemon in store
+    const isAdoptedPokemon = nickname => {
+      const findPokemon = pokemon => {
+        return pokemon.nickname.toLowerCase() === nickname.toLowerCase();
+      };
+      const pokemon = ownedPokemons.find(findPokemon);
+      const isAdopted = typeof pokemon !== 'undefined';
+
+      return isAdopted;
+    };
+
     // Check wether the pokemon is already owned with the same nickname
     const isAdopted = isAdoptedPokemon(nickname);
 
     // Adopt new pokemon
     if (!isAdopted && nickname) {
+      const { adoptPokemon } = await import('@/state/actions');
       const newPokemon = { ...pokemon, image, nickname };
       dispatch(adoptPokemon(newPokemon));
       handleClose();
@@ -70,19 +80,22 @@ const PokemonAdd = ({ pokemon }) => {
   };
 
   // Handle click for catching pokemon
-  const handleCatch = () => {
-    // Probability/Success rate
+  const handleCatch = async () => {
+    // Probability/Success rate to get pokemon
     const probability = number => Math.random() <= number;
     const isCatched = probability(0.5);
 
+    const { catchPokemon, toggleDialog } = await import('@/state/actions');
     dispatch(catchPokemon(isCatched));
     dispatch(toggleDialog());
   };
 
   // Handle close dialog
-  const handleClose = () => {
+  const handleClose = async () => {
     setNickname('');
     setErrorMessage('');
+
+    const { catchPokemon, toggleDialog } = await import('@/state/actions');
     dispatch(catchPokemon(false));
     dispatch(toggleDialog());
   };
@@ -128,6 +141,7 @@ const PokemonAdd = ({ pokemon }) => {
                 onChange={handleNickname}
                 autoFocus
                 maxLength={15}
+                onKeyDown={handleKeyDown}
               />
             </div>
           </section>

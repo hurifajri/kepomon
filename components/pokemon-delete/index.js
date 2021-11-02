@@ -6,16 +6,16 @@ import {
   buttonLabelStyle,
   buttonStyle,
 } from '@/components/pokemon-delete/style';
-import { selectPokemon, toggleDialog } from '@/state/actions';
 import { useAppContext } from '@/state/context';
 
 const PokemonDelete = ({ pokemon }) => {
   const { dispatch } = useAppContext();
 
   // Handle confirm to open dialog
-  const handleConfirm = (event, selectedPokemon) => {
+  const handleConfirm = async (event, selectedPokemon) => {
     event.preventDefault();
 
+    const { selectPokemon, toggleDialog } = await import('@/state/actions');
     dispatch(selectPokemon(selectedPokemon));
     dispatch(toggleDialog());
   };

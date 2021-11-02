@@ -23,7 +23,7 @@ import { useAppContext } from '@/state/context';
 
 const PokemonCard = ({ pokemon }) => {
   const router = useRouter();
-  const { ownedPokemons } = useAppContext();
+  const { ownedPokemons, isAmp } = useAppContext();
 
   const isCollectionPage = router?.pathname === '/collection';
 
@@ -78,7 +78,22 @@ const PokemonCard = ({ pokemon }) => {
               </If>
             </header>
             <main css={mainStyle}>
-              <Image src={image} alt={pokemon.name} width={100} height={100} />
+              <If condition={!isAmp}>
+                <Image
+                  src={image}
+                  alt={pokemon.name}
+                  width={100}
+                  height={100}
+                />
+              </If>
+              <If condition={isAmp}>
+                <amp-img
+                  src={image}
+                  alt={pokemon.name}
+                  width={100}
+                  height={100}
+                />
+              </If>
               <Heading level={2} css={headingStyle}>
                 <span>
                   <If condition={pokemon.nickname !== undefined}>

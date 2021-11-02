@@ -1,37 +1,49 @@
 // External modules
+import { useAmp } from 'next/amp';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 // Internal modules
-import Dialog from '@/components/dialog';
 import Heading from '@/components/heading';
 import If from '@/components/if';
 import MessageBox from '@/components/message-box';
 import PokemonList from '@/components/pokemon-list';
 import useMounted from '@/hooks/useMounted';
-import { releasePokemon, toggleDialog } from '@/state/actions';
+import { checkAmp } from '@/state/actions';
 import { useAppContext } from '@/state/context';
 import { headingStyle, sectionStyle } from '@/styles/shared';
 
+// Dynamic internal modules
+const Dialog = dynamic(() => import('@/components/dialog'), { ssr: false });
+
+// AMP configuration
+export const config = { amp: 'hybrid' };
+
 const Collection = () => {
+  const isAmp = useAmp();
+  const mounted = useMounted();
   const router = useRouter();
 
   const { ownedPokemons, dialogOpen, selectedPokemon, dispatch } =
     useAppContext();
   const { nickname, name, image } = selectedPokemon ?? {};
-  const mounted = useMounted();
+
+  useEffect(() => dispatch(checkAmp(isAmp)), []);
 
   // Handle close dialog
-  const handleClose = event => {
+  const handleClose = async event => {
     event.preventDefault();
 
+    const { toggleDialog } = await import('@/state/actions');
     dispatch(toggleDialog());
   };
 
-  const handleRelease = event => {
+  const handleRelease = async event => {
     event.preventDefault();
 
+    const { releasePokemon, toggleDialog } = await import('@/state/actions');
     dispatch(releasePokemon(selectedPokemon));
     dispatch(toggleDialog());
   };
