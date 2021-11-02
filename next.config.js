@@ -3,6 +3,11 @@ const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
 
 const config = {
+  experimental: {
+    amp: {
+      skipValidation: true,
+    },
+  },
   images: {
     domains: ['raw.githubusercontent.com'],
     minimumCacheTTL: 60,
