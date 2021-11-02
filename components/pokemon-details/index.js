@@ -1,12 +1,12 @@
 // External modules
 import { css, Global } from '@emotion/react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 // Internal modules
 import Card from '@/components/card';
 import Heading from '@/components/heading';
-import Pokeball from '@/components/icons/pokeball';
 import If from '@/components/if';
 import {
   bottomRightStyle,
@@ -32,6 +32,11 @@ import PokemonTypeList from '@/components/pokemon-type-list';
 import { useAppContext } from '@/state/context';
 import useCachedImage from '@/hooks/useCachedImage';
 import useRandomColor from '@/hooks/useRandomColor';
+
+// Dynamic internal modules
+const Pokeball = dynamic(() => import('@/components/icons/pokeball'), {
+  ssr: false,
+});
 
 const PokemonDetails = ({ pokemon }) => {
   const {
