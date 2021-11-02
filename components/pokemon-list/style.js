@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 // Internal modules
 import media from '@/styles/media';
-import { bigTextStyle } from '@/styles/shared';
+import { bigTextStyle, flexCenterStyle } from '@/styles/shared';
 
 export const headingStyle = css`
   ${bigTextStyle}
@@ -15,4 +15,11 @@ export const listStyle = css`
   ${media.sm} {
     justify-content: space-between;
   }
+`;
+
+export const sectionStyle = css`
+  ${flexCenterStyle}
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
 `;

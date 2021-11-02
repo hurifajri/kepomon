@@ -17,6 +17,7 @@ import {
   openStyle,
 } from '@/components/dialog/style';
 import Portal from '@/components/portal';
+import useMounted from '@/hooks/useMounted';
 
 const Dialog = ({
   children,
@@ -27,8 +28,7 @@ const Dialog = ({
   open,
   withButtons,
 }) => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   return (
     <If condition={mounted && typeof window !== 'undefined'}>
