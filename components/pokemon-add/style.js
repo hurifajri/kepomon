@@ -20,6 +20,7 @@ export const errorStyle = css`
 
 export const headingStyle = css`
   ${bigTextStyle}
+  font-weight: 700;
 `;
 
 export const inputHeadingStyle = css`
