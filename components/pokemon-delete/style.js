@@ -5,7 +5,6 @@ import { css } from '@emotion/react';
 import {
   bigReverseSkewStyle,
   bigSkewStyle,
-  bigTextStyle,
   overlapStyle,
   thinBorderStyle,
 } from '@/styles/shared';
@@ -24,9 +23,4 @@ export const buttonStyle = css`
   &:hover {
     color: var(--light-blue);
   }
-`;
-
-export const headingStyle = css`
-  ${bigTextStyle}
-  font-weight: 700;
 `;
