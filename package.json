@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.5.0",
     "graphql": "^15.7.2",
     "next": "11.1.2",
@@ -20,8 +23,16 @@
     "sharp": "^0.29.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.3.1",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
-    "prettier": "^2.4.1"
+    "eslint-plugin-testing-library": "^5.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "^17.0.2"
   }
 }
