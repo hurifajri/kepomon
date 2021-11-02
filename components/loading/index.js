@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 // Internal modules
 import Pokeball from '@/components/icons/pokeball';
 import { loadingStyle } from '@/components/loading/style';

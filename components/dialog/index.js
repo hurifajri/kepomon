@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 // External modules
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';

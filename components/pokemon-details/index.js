@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 // External modules
 import { css, Global } from '@emotion/react';
 import Image from 'next/image';

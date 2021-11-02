@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 // External modules
 import Image from 'next/image';
 import Link from 'next/link';
