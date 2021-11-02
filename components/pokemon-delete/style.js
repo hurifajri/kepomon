@@ -29,4 +29,5 @@ export const buttonStyle = css`
 export const headingStyle = css`
   ${bigTextStyle}
   font-weight: 700;
+  text-align: center;
 `;
