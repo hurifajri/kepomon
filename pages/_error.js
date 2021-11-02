@@ -1,9 +1,16 @@
+// Internal modules
+import If from '@/components/if';
+import MessageBox from '@/components/message-box';
+
 const Error = ({ statusCode }) => (
-  <p>
-    {statusCode
-      ? `An error ${statusCode} occurred on server`
-      : 'An error occurred on client'}
-  </p>
+  <>
+    <If condition={statusCode !== null}>
+      <MessageBox message={`An error ${statusCode} occurred on server`} />
+    </If>
+    <If condition={statusCode === null}>
+      <MessageBox message="An error occurred on client" />
+    </If>
+  </>
 );
 
 Error.getInitialProps = ({ res, err }) => {

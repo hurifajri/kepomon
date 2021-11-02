@@ -14,6 +14,6 @@ const media = Object.keys(sizes).reduce((accumulator, label) => {
 }, {});
 
 // Special breakpoint for very small device
-media.xs = `@media (max-width: ${320 / 16}em)`;
+media.xs = `@media (max-width: ${360 / 16}em)`;
 
 export default media;

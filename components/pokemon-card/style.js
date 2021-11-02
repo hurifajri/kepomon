@@ -21,8 +21,8 @@ export const cardContentStyle = css`
   width: 100px;
   height: 100px;
   ${media.xs} {
-    width: 50px;
-    height: 50px;
+    width: 79px;
+    height: 79px;
   }
 `;
 
@@ -64,7 +64,7 @@ export const mainStyle = css`
   position: absolute;
   top: 30px;
   ${media.xs} {
-    width: 50px;
+    width: 79px;
     top: 20px;
   }
 `;

@@ -12,6 +12,7 @@ export const lightColors = {
   cyan: 'var(--light-cyan)',
   green: 'var(--light-green)',
   purple: 'var(--light-purple)',
+  red: 'var(--light-red)',
   white: 'var(--light-white)',
 };
 

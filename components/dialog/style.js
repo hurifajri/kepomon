@@ -2,11 +2,11 @@
 import { css } from '@emotion/react';
 
 // Internal modules
-import media from '@/styles/media';
 import {
   buttonLabelStyle,
   buttonsStyle,
   buttonStyle,
+  dialogStyle,
   flexCenterStyle,
   overlapStyle,
   thickBorderStyle,
@@ -41,13 +41,10 @@ export const cardContentStyle = css`
 `;
 
 export const cardStyle = css`
+  ${dialogStyle}
   ${flexCenterStyle}
   position: fixed;
-  width: 80%;
   height: auto;
-  ${media.sm} {
-    width: 400px;
-  }
 `;
 
 export const openStyle = css`

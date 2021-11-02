@@ -42,6 +42,7 @@ const globalStyles = css`
     --light-cyan: #c6eced;
     --light-green: #c7edca;
     --light-purple: #c9c7ee;
+    --light-red: #ff0000;
     --light-white: hsla(0, 0%, 100%, 0.5);
 
     --type-normal: #a8a878;

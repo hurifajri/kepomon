@@ -4,25 +4,19 @@ import { css } from '@emotion/react';
 // Internal modules
 import media from '@/styles/media';
 import {
-  bigTextStyle,
   buttonLabelStyle,
   buttonStyle,
-  flexCenterStyle,
+  headingStyle,
+  sectionStyle,
   smallReverseSkewStyle,
   smallSkewStyle,
   thinBorderStyle,
 } from '@/styles/shared';
 
-export { buttonLabelStyle, buttonStyle };
+export { buttonLabelStyle, buttonStyle, headingStyle, sectionStyle };
 
 export const errorStyle = css`
-  border: 2px solid red;
-`;
-
-export const headingStyle = css`
-  ${bigTextStyle}
-  font-weight: 700;
-  text-align: center;
+  border: 2px solid var(--light-red);
 `;
 
 export const inputHeadingStyle = css`
@@ -48,11 +42,4 @@ export const inputStyle = css`
   & input:focus {
     outline: none;
   }
-`;
-
-export const sectionStyle = css`
-  ${flexCenterStyle}
-  flex-direction: column;
-  gap: 15px;
-  text-align: center;
 `;

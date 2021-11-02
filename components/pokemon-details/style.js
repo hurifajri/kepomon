@@ -79,6 +79,10 @@ export const profileStyle = css`
   flex: 1;
 `;
 
+export const sectionCenterStyle = css`
+  align-self: center;
+`;
+
 export const sectionColumnStyle = css`
   ${columnStyle}
   gap: 10px;
