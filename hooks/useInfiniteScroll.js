@@ -27,8 +27,6 @@ const useInfiniteScroll = (loading, callback) => {
 
     // Clean the even when unmounted
     return () => window.removeEventListener('scroll', scrollListener);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
