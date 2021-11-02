@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * @returns {String} The image url
  */
 const useCachedImage = (name, initialImage) => {
-  const key = 'pokemon-images';
+  const key = 'kepomon-images';
   const [image, setImage] = useState(initialImage);
 
   useEffect(() => {
