@@ -16,7 +16,7 @@ const useInfiniteScroll = (loading, callback) => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
     // Execute callback function when the conditions are met
-    if (!loading && scrollTop + clientHeight >= scrollHeight) {
+    if (!loading && scrollTop + clientHeight >= scrollHeight - 50) {
       callback({ variables: { ...variables, offset: (perPage += PER_PAGE) } });
     }
   };
