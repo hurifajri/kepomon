@@ -16,7 +16,7 @@ import {
 export { buttonLabelStyle, buttonStyle, headingStyle, sectionStyle };
 
 export const errorStyle = css`
-  border: 2px solid red;
+  border: 2px solid var(--light-red);
 `;
 
 export const inputHeadingStyle = css`
