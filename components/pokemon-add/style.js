@@ -44,7 +44,7 @@ export const inputStyle = css`
   }
 `;
 
-export const inputWrapperStyle = css`
+export const sectionStyle = css`
   ${flexCenterStyle}
   flex-direction: column;
   gap: 15px;
