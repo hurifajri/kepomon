@@ -9,7 +9,12 @@ const Container = forwardRef((props, ref) => {
   const { children, css, ...rest } = props;
 
   return (
-    <div className="container" ref={ref} css={[containerStyle, css]} {...rest}>
+    <div
+      data-testid="container"
+      ref={ref}
+      css={[containerStyle, css]}
+      {...rest}
+    >
       {children}
     </div>
   );

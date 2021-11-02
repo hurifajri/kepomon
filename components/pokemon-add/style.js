@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 
 // Internal modules
+import media from '@/styles/media';
 import {
   bigTextStyle,
   buttonLabelStyle,
@@ -20,6 +21,8 @@ export const errorStyle = css`
 
 export const headingStyle = css`
   ${bigTextStyle}
+  font-weight: 700;
+  text-align: center;
 `;
 
 export const inputHeadingStyle = css`
@@ -37,14 +40,19 @@ export const inputStyle = css`
     height: 100%;
     font-size: 20px;
     font-weight: 700;
+    max-width: 183px;
+    ${media.sm} {
+      max-width: unset;
+    }
   }
   & input:focus {
     outline: none;
   }
 `;
 
-export const inputWrapperStyle = css`
+export const sectionStyle = css`
   ${flexCenterStyle}
   flex-direction: column;
   gap: 15px;
+  text-align: center;
 `;

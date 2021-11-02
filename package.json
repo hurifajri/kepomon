@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
+    "test:all": "jest --watchAll",
     "test:ci": "jest --ci"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.5.0",
+    "cross-fetch": "^3.1.4",
     "graphql": "^15.7.2",
     "next": "11.1.2",
     "next-pwa": "^5.4.0",

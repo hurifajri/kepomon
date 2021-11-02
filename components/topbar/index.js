@@ -7,7 +7,7 @@ import { headerStyle } from '@/components/topbar/style';
 import logo from '@/public/logo.png';
 
 const Topbar = () => (
-  <header css={headerStyle}>
+  <header data-testid="topbar" css={headerStyle}>
     <Image src={logo} alt="Kepomon logo" />
     <Navbar />
   </header>

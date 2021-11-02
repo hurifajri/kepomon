@@ -28,10 +28,11 @@ export const cardContentStyle = css`
 `;
 
 export const cardStyle = css`
-  padding: 50px;
+  padding: 25px;
   flex: 3;
   ${media.lg} {
     ${smallSkewStyle}
+    padding: 50px;
   }
 `;
 

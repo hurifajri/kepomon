@@ -46,7 +46,7 @@ export const cardStyle = css`
   width: 80%;
   height: auto;
   ${media.sm} {
-    width: 40%;
+    width: 400px;
   }
 `;
 

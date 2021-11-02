@@ -52,7 +52,7 @@ const PokemonDelete = ({ pokemon }) => {
         onConfirm={handleRelease}
         confirmText="Release"
       >
-        <Heading level={2} css={headingStyle}>
+        <Heading level={1} css={headingStyle}>
           Are you sure to release this adorable Képomon?
         </Heading>
       </Dialog>

@@ -15,7 +15,7 @@ import {
 import routes from '@/utils/routes';
 
 const Navbar = () => (
-  <nav>
+  <nav data-testid="navbar">
     <List css={listStyle}>
       {
         // Iterate each route from routes

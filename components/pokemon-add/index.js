@@ -1,4 +1,5 @@
 // External modules
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
@@ -13,7 +14,7 @@ import {
   headingStyle,
   inputHeadingStyle,
   inputStyle,
-  inputWrapperStyle,
+  sectionStyle,
 } from '@/components/pokemon-add/style';
 import useCachedImage from '@/hooks/useCachedImage';
 import { adoptPokemon, catchPokemon, toggleDialog } from '@/state/actions';
@@ -100,15 +101,21 @@ const PokemonAdd = ({ pokemon }) => {
         withButtons={isCatched}
       >
         <If condition={!isCatched}>
-          <Heading level={2} css={headingStyle}>
+          <Heading level={1} css={headingStyle}>
             Képomon runs away!
           </Heading>
         </If>
         <If condition={isCatched}>
-          <Heading level={2} css={headingStyle}>
+          <Heading level={1} css={headingStyle}>
             You got the Képomon!
           </Heading>
-          <section css={inputWrapperStyle}>
+          <section css={sectionStyle}>
+            <Image src={image} alt={pokemon.name} width={100} height={100} />
+            <Heading level={2}>
+              {`${nickname ? nickname + ' The ' : ''} ${pokemon.name}`}
+            </Heading>
+          </section>
+          <section css={sectionStyle}>
             <Heading level={3} css={inputHeadingStyle}>
               <If condition={errorMessage === ''}>
                 Give your new Képomon a nickname!
@@ -116,7 +123,12 @@ const PokemonAdd = ({ pokemon }) => {
               <If condition={errorMessage !== ''}>{errorMessage}</If>
             </Heading>
             <div css={[inputStyle, errorMessage && errorStyle]}>
-              <input value={nickname} onChange={handleNickname} autoFocus />
+              <input
+                value={nickname}
+                onChange={handleNickname}
+                autoFocus
+                maxLength={15}
+              />
             </div>
           </section>
         </If>
