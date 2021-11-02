@@ -40,10 +40,17 @@ const PokemonAdd = ({ pokemon }) => {
     setNickname(name);
   };
 
+  // Submit an action on enter in the text field
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') handleAdopt();
+  };
+
   const handleAdopt = async () => {
     // Find out existing pokemon in store
     const isAdoptedPokemon = nickname => {
-      const findPokemon = pokemon => pokemon.nickname === nickname;
+      const findPokemon = pokemon => {
+        return pokemon.nickname.toLowerCase() === nickname.toLowerCase();
+      };
       const pokemon = ownedPokemons.find(findPokemon);
       const isAdopted = typeof pokemon !== 'undefined';
 
@@ -134,6 +141,7 @@ const PokemonAdd = ({ pokemon }) => {
                 onChange={handleNickname}
                 autoFocus
                 maxLength={15}
+                onKeyDown={handleKeyDown}
               />
             </div>
           </section>
