@@ -13,6 +13,7 @@
   ],
   "rules": {
     "react/display-name": "off",
+    "react-hooks/exhaustive-deps": "off",
     "react/sort-prop-types": [
       "error",
       {
