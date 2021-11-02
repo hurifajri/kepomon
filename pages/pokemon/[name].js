@@ -1,6 +1,7 @@
 // External modules
 import { useAmp } from 'next/amp';
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 // Internal modules
 import If from '@/components/if';
