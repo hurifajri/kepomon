@@ -20,8 +20,7 @@ describe('Pokemon Ability Item', () => {
     const item = screen.getByTestId('item');
     expect(item).toBeInTheDocument();
 
-    const heading = screen.getByTestId('heading');
+    const heading = screen.getByText(pokemonAbility.name);
     expect(heading).toBeInTheDocument();
-    expect(heading).toContain(pokemonAbility.name);
   });
 });
