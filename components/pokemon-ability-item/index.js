@@ -15,7 +15,9 @@ const PokemonAbilityItem = ({ pokemonAbility }) => (
   <If condition={typeof pokemonAbility === 'object'}>
     <Item>
       <Card css={cardStyle} cssContent={cardContentStyle}>
-        <Heading level={3}>{pokemonAbility.name}</Heading>
+        <Heading data-testid="heading" level={3}>
+          {pokemonAbility.name}
+        </Heading>
       </Card>
     </Item>
   </If>
