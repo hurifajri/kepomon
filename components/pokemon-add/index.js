@@ -23,7 +23,7 @@ const Dialog = dynamic(() => import('@/components/dialog'), { ssr: false });
 const Heading = dynamic(() => import('@/components/heading'), { ssr: false });
 
 const PokemonAdd = ({ pokemon }) => {
-  const { dialogOpen, isCatched, ownedPokemons, dispatch } = useAppContext();
+  const { isDialogOpen, isCatched, ownedPokemons, dispatch } = useAppContext();
 
   // Gwt pokemon image from cached or request
   const initialImage = pokemon.image;
@@ -106,7 +106,7 @@ const PokemonAdd = ({ pokemon }) => {
         <span css={buttonLabelStyle}>Catch Képomon</span>
       </button>
       <Dialog
-        open={dialogOpen}
+        open={isDialogOpen}
         onCancel={handleClose}
         cancelText="Release"
         onConfirm={handleAdopt}

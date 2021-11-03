@@ -27,7 +27,7 @@ const Collection = () => {
   const mounted = useMounted();
   const router = useRouter();
 
-  const { ownedPokemons, dialogOpen, selectedPokemon, dispatch } =
+  const { ownedPokemons, isDialogOpen, selectedPokemon, dispatch } =
     useAppContext();
   const { nickname, name, image } = selectedPokemon ?? {};
 
@@ -72,7 +72,7 @@ const Collection = () => {
         </If>
         <If condition={selectedPokemon !== null}>
           <Dialog
-            open={dialogOpen}
+            open={isDialogOpen}
             onCancel={handleClose}
             cancelText="Keep"
             onConfirm={handleRelease}
