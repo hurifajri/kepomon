@@ -17,6 +17,7 @@ import usePokemons from '@/hooks/usePokemons';
 
 // Dynamic internal modules
 const Loading = dynamic(() => import('@/components/loading'));
+const MessageBox = dynamic(() => import('@/components/message-box'));
 
 // AMP configuration
 export const config = { amp: 'hybrid' };
@@ -32,8 +33,6 @@ const Pokemons = ({ initialPokemons }) => {
   const { loading, error, pokemons, getPokemons } = data;
   useInfiniteScroll(loading, getPokemons);
 
-  if (error) return `Error! ${error.message}`;
-
   return (
     <>
       <Head>
@@ -43,9 +42,14 @@ const Pokemons = ({ initialPokemons }) => {
           content="A list of curious monsters out there"
         />
       </Head>
-      <PokemonList pokemons={pokemons} />
-      <If condition={loading}>
-        <Loading />
+      <If condition={typeof error !== 'undefined'}>
+        <MessageBox message={`Error! ${error?.message}`} />
+      </If>
+      <If condition={typeof error === 'undefined'}>
+        <PokemonList pokemons={pokemons} />
+        <If condition={loading}>
+          <Loading />
+        </If>
       </If>
     </>
   );

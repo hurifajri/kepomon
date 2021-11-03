@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const initialState = {
     isAmp: false,
     isCatched: false,
-    dialogOpen: false,
+    isDialogOpen: false,
     ownedPokemons: [],
     selectedPokemon: null,
   };

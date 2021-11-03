@@ -33,7 +33,7 @@ const appReducer = (state, action) => {
       return { ...state, selectedPokemon: action.payload };
     }
     case TOGGLE_DIALOG: {
-      return { ...state, dialogOpen: !state.dialogOpen };
+      return { ...state, isDialogOpen: !state.isDialogOpen };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
