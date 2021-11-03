@@ -21,7 +21,11 @@ const PokemonDelete = ({ pokemon }) => {
   };
 
   return (
-    <button css={buttonStyle} onClick={event => handleConfirm(event, pokemon)}>
+    <button
+      data-testid="delete"
+      css={buttonStyle}
+      onClick={event => handleConfirm(event, pokemon)}
+    >
       <span css={buttonLabelStyle}>Release</span>
     </button>
   );
