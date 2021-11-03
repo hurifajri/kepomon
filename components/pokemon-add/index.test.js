@@ -13,7 +13,7 @@ describe('Pokemon Add', () => {
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg',
   };
 
-  it('renders a dialog once button is clicked', async () => {
+  it('renders a dialog once add button is clicked', async () => {
     render(
       <AppProvider>
         <PokemonAdd pokemon={pokemon} />
