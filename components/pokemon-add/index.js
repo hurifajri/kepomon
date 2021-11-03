@@ -102,7 +102,7 @@ const PokemonAdd = ({ pokemon }) => {
 
   return (
     <>
-      <button css={buttonStyle} onClick={handleCatch}>
+      <button data-testid="add" css={buttonStyle} onClick={handleCatch}>
         <span css={buttonLabelStyle}>Catch Képomon</span>
       </button>
       <Dialog
